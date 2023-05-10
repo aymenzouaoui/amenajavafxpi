@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="70.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="amena.gui.LocationInterface.MyListCell2">
+   <children>
+      <ImageView fx:id="imgv" fitHeight="58.0" fitWidth="73.0" layoutX="33.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lab" layoutX="192.0" layoutY="27.0" prefHeight="18.0" prefWidth="59.0" text="Label" />
+   </children>
+</AnchorPane>

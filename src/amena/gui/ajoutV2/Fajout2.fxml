@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneA2" prefHeight="464.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ajoutV2.Fajout2Controller">
+   <children>
+      <TextField fx:id="tfmat" layoutX="137.0" layoutY="61.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label layoutX="137.0" layoutY="25.0" prefHeight="30.0" prefWidth="90.0" text="Matricule">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="244.0" prefHeight="30.0" prefWidth="191.0" text="Nombre de  Chevaux">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="101.0" prefHeight="30.0" prefWidth="90.0" text="Marque">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfchv" layoutX="137.0" layoutY="282.0" prefHeight="26.0" prefWidth="245.0" />
+      <TextField fx:id="tfprx" layoutX="137.0" layoutY="349.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label layoutX="137.0" layoutY="313.0" prefHeight="30.0" prefWidth="79.0" text="Prix">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="452.0" layoutY="25.0" prefHeight="30.0" prefWidth="90.0" text="Couleur">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Line endX="-100.0" endY="362.4000244140625" layoutX="519.0" layoutY="20.0" opacity="0.27" startX="-100.0" startY="16.000003814697266" />
+      <ColorPicker fx:id="tfclr" layoutX="450.0" layoutY="61.0" prefHeight="26.0" prefWidth="246.0" />
+      <Label layoutX="450.0" layoutY="101.0" prefHeight="30.0" prefWidth="122.0" text="Photo">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnpic" layoutX="450.0" layoutY="131.0" mnemonicParsing="false" onAction="#ajoutpic" prefHeight="26.0" prefWidth="246.0" text="Ajouter photo" />
+      <Button layoutX="323.0" layoutY="415.0" mnemonicParsing="false" onAction="#ajouterBc" prefHeight="26.0" prefWidth="191.0" text="Ajouter" />
+      <ImageView fx:id="imgv2" fitHeight="150.0" fitWidth="200.0" layoutX="472.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="cmbm" layoutX="137.0" layoutY="131.0" prefHeight="26.0" prefWidth="246.0" />
+      <Label layoutX="137.0" layoutY="175.0" prefHeight="30.0" prefWidth="90.0" text="modèle">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbmod" layoutX="137.0" layoutY="209.0" prefHeight="26.0" prefWidth="246.0" />
+   </children>
+</AnchorPane>

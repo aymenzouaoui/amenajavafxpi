@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.dashboard.First3Controller">
+   <children>
+      <AnchorPane prefHeight="22.0" prefWidth="842.0" style="-fx-background-color: #023c6b;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fx:id="menu" fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../../img/main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exit" fitHeight="24.0" fitWidth="25.0" layoutX="803.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.200000000000003" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../../img/cross.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="365.0" layoutY="17.0" prefHeight="26.0" prefWidth="111.0" text="ESPACE ADMIN" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane4" layoutY="59.0" prefHeight="572.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;">
+         <children>
+            <HBox layoutX="291.0" layoutY="57.0" prefHeight="156.0" prefWidth="259.0">
+               <children>
+                  <ImageView fitHeight="155.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../img/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane1" layoutY="323.0" prefHeight="625.0" prefWidth="842.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="pane3" layoutY="59.0" prefHeight="571.0" prefWidth="842.0" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane2" layoutY="60.0" prefHeight="571.0" prefWidth="274.0" style="-fx-background-color: #023c6b;">
+         <children>
+            <VBox layoutY="-1.0" prefHeight="572.0" prefWidth="274.0" style="-fx-background-color: #023c6b;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="-1.0">
+               <children>
+                  <Pane onMouseClicked="#profilbtn" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Circle fx:id="circle2" layoutX="129.0" layoutY="58.0" radius="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <Label fx:id="nomper" layoutX="6.0" layoutY="103.0" prefHeight="33.0" prefWidth="216.0" text="Ahlem mhamdi" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="72.0" top="7.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="21.0" prefWidth="274.0" style="-fx-background-color: #023c6b; -fx-alignment: #fffff;" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Yu Gothic Light" size="12.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="77.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#HandleButtonClick1" prefHeight="48.0" prefWidth="290.0" text="     Accueil" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/download-removebg-preview.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D z="10.0" />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="25.0" right="12.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#btnu" prefHeight="48.0" prefWidth="290.0" text="    Gestion des utilisateurs" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/download__1_-removebg-preview.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D z="10.0" />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#annoncebtn" prefHeight="48.0" prefWidth="268.0" text="Gestion des annonces" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="56.0" layoutX="1.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../img/images-removebg-preview.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D z="10.0" />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#colisbtn" prefHeight="48.0" prefWidth="290.0" text="    Gestion des colis" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="49.0" fitWidth="44.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/images__1_-removebg-preview.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D z="10.0" />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#HandleButtonClick" prefHeight="48.0" prefWidth="290.0" text="   Gestion locations" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="49.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/car-vehicle-white-icon-download-png-11637140879cylaecpfqd-removebg-preview.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D z="10.0" />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="14.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#gamificationBtn" prefHeight="48.0" prefWidth="290.0" text="Gestion gamification" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="66.0" fitWidth="72.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/tt.png" />
+                           </image>
+                           <rotationAxis>
+                              <Point3D z="10.0" />
+                           </rotationAxis>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="7.0" />
+                     </padding>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#dxn" prefHeight="72.0" prefWidth="274.0" styleClass="button" text="  DECONNEXION" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/images__2_-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="60.0" top="20.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="14.0" prefWidth="274.0" styleClass="button" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Yu Gothic Light" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="60.0" top="20.0" />
+                     </padding>
+                     <stylesheets>
+                        <URL value="@style.css" />
+                        <URL value="@../style.css" />
+                     </stylesheets>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="631.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AcceilleController">
+    <TabPane fx:id="tabPane" layoutX="3.0" layoutY="2.0" prefHeight="618.0" prefWidth="823.0">
+        <tabs>
+            <Tab text="Ajout">
+                <content>
+                    <fx:include source="AjoutD.fxml" />
+                </content>
+            </Tab>
+            <Tab text="Afficher">
+                <content>
+                    <fx:include source="A.fxml" />
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</AnchorPane>

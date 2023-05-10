@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="chatPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="839.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ChatUserController">
+   <children>
+      <Text fx:id="nomlab" fill="#023c6b" layoutX="158.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lab" wrappingWidth="129.79166666666666">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="sendButton" layoutX="577.0" layoutY="363.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" style="-fx-background-radius: 30;" text="Envoyer">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <ListView fx:id="messageList" layoutX="158.0" layoutY="60.0" prefHeight="247.0" prefWidth="524.0" style="-fx-background-color: #d6d6d6; -fx-background-radius: 30;" />
+      <Button fx:id="btnback" layoutX="708.0" layoutY="19.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="105.0" text="Retour" />
+      <JFXTextArea fx:id="msgf" layoutX="158.0" layoutY="326.0" prefHeight="114.0" prefWidth="396.0" style="-fx-background-color: #d6d6d6; -fx-background-radius: 30;" />
+   </children>
+</AnchorPane>

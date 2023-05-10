@@ -1,0 +1,70 @@
+
+.button
+{
+    -fx-background-color: #2f4558 ;
+}
+.button:hover
+{
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+.button:pressed
+{
+    -fx-background-color: #2f4558 ;
+}
+
+.prx
+{
+    -fx-background-color: #2f4558 ;
+
+    -fx-background-radius : 20 ;  
+}
+
+.rec
+{
+    -fx-background-radius : 0 0 20 20 ;  
+}
+
+.in
+{
+    -fx-background-color: #2f4558 ;
+
+    -fx-background-radius : 0 0 10 10 ;  
+}
+.pv
+{
+    -fx-background-color: transparent;
+
+}
+.pane
+{
+    -fx-background-color :   #f7f7f7 ; 
+    -fx-background-radius : 20 ;  
+}
+
+.pane:hover
+{
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+.pane:pressed
+{
+    -fx-background-color :   #f7f7f7 ; 
+}
+
+.list-cell
+{
+    -fx-background-color: transparent ;
+
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    /* 3:, 4: */
+    -fx-background-color: linear-gradient(#333 0%, #777 25%, #aaa 75%, #eee 100%);
+    -fx-text-fill: white; /* 5 */
+}
+.list-cell { -fx-text-fill: black; /* 5 */ }
+.list-cell:filled:hover { 
+    -fx-background-color: #e0e0e0; /* 2 */
+    -fx-text-fill: white; /* 5 */
+} 

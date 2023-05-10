@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.controllers.CalendrierController">
+   <center>
+       <VBox fx:id="eventList">
+           <!-- List of events will be displayed here -->
+       </VBox>
+   </center>
+   <bottom>
+       <Button fx:id="refreshButton" text="Refresh" onAction="#refresh"/>
+   </bottom>
+</BorderPane>

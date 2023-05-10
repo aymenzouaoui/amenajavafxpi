@@ -1,0 +1,57 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-background-color: #ffffff;
+}
+
+#header {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: #0099ff;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 8px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #0088cc;
+}
+
+.text-field {
+    -fx-background-color: #f2f2f2;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #cccccc;
+}
+.text-area {
+    -fx-background-color: #f2f2f2;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #cccccc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.checkbox {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.checkbox:hover {
+    -fx-cursor: hand;
+}
+

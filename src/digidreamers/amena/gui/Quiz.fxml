@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane21" prefHeight="1138.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="digidreamers.amena.gui.QuizController">
+   <children>
+      <ScrollPane fx:id="scrollPane1" layoutY="4.0" prefHeight="527.0" prefWidth="703.0" style="">
+         <content>
+            <VBox prefHeight="1074.0" prefWidth="675.0">
+               <children>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 1: Quel est le nom de l'aéroport international de Tunisie ? ">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q1a1" text="L'aéroport international de Tunisie est l'aéroport de Tunis-Carthage" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q1a2" text="Madrid" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q1a3" text="Berlin" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q1a4" text="London" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label minWidth="660.0" prefHeight="19.0" prefWidth="533.0" text="Question 2: Quel est le nom de l'autoroute qui relie Tunis à Sfax, la deuxième plus grande ville de Tunisie ?">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q2a1" text="Venus" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q2a2" text="Jupiter" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q2a3" text="l'autoroute A1" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q2a4" text="Saturn" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 3: Quelle est la capitale de la Tunisie ?">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q3a1" text="Paris" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q3a2" text="Tunis" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q3a3" text="Berlin" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q3a4" text="London" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 4: Quelle est la langue officielle de la Tunisie ?">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q4a1" text="Darja" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q4a2" text="Français" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q4a3" text="Anglais" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q4a4" text="Arabe" GridPane.rowIndex="5" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 5: Quelle est la monnaie officielle de la Tunisie ?">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q5a1" text="Paris" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q5a2" text="Madrid" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q5a3" text="dinar tunisien" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q5a4" text="London" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 6: Quel est le nom du parc national tunisien situé dans le sud-ouest du pays ?">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q6a1" text="Rades" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q6a2" text="Ichkeul" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q6a3" text="Nahli" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q6a4" text="Essaada" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 7: Quel est le nom de la célèbre station balnéaire tunisienne située sur l'île de Djerba ?">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q7a1" text="Sakiet Ezzit" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q7a2" text="Beb Bnet" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q7a3" text="Beb Alioua" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q7a4" text="Houmet Essouk" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 8:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label text="What is the capital of France?" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q8a1" text="Paris" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q8a2" text="Madrid" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q8a3" text="Berlin" GridPane.rowIndex="4" />
+                        <RadioButton fx:id="q8a4" text="London" GridPane.rowIndex="5" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 9:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label text="What is the capital of France?" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q9a1" text="Paris" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q9a2" text="Madrid" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q9a3" text="Berlin" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q9a4" text="London" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane prefHeight="108.0" prefWidth="500.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Question 10:">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label text="What is the capital of France?" GridPane.columnIndex="1" />
+                        <RadioButton fx:id="q10a1" text="Paris" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="q10a2" text="Madrid" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="q10a3" text="Berlin" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="q10a4" text="London" GridPane.rowIndex="4" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <Button fx:id="btnSub" alignment="TOP_LEFT" onAction="#submitQu" prefHeight="37.0" prefWidth="117.0" style="-fx-background-color: #81baff;" text="   Submit" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="230.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Button>
+                  <Label fx:id="resultLabel">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="230.0" right="15.0" top="15.0" />
+                     </VBox.margin></Label>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

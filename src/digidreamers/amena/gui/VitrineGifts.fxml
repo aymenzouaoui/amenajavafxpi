@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="allp" prefHeight="540.0" prefWidth="832.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="digidreamers.amena.gui.VitrineGiftsController">
+   <children>
+      <AnchorPane fx:id="pane" layoutX="94.0" layoutY="140.0" prefHeight="386.0" prefWidth="795.0" style="-fx-background-color: #transparent;" />
+      <Pane prefHeight="67.0" prefWidth="843.0" style="-fx-background-color: #2f4558;">
+         <children>
+            <Label layoutX="34.0" layoutY="15.0" prefHeight="38.0" prefWidth="369.0" text="Nos cadeaux" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutY="66.0" prefHeight="67.0" prefWidth="843.0" style="-fx-background-color: #d6d6d6;">
+         <children>
+            <ComboBox fx:id="cmbtype" layoutX="49.0" layoutY="21.0" prefWidth="150.0" promptText="Competition" />
+            <Button fx:id="btnPhoto" layoutX="224.0" layoutY="21.0" mnemonicParsing="false" onAction="#ajouterPhoto" style="-fx-background-radius: 30; -fx-background-color: #81baff;" text="Rechercher" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="528.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/png-clipart-calculation-computer-icons-summation-mathematics-logo-number-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="565.0" layoutY="6.0" prefHeight="55.0" prefWidth="85.0">
+               <children>
+                  <Label text="Score">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="idScoreT" editable="false" prefHeight="25.0" prefWidth="59.0" style="-fx-background-radius: 30;" />
+               </children>
+            </VBox>
+            <VBox layoutX="683.0" layoutY="8.0" prefHeight="76.0" prefWidth="85.0">
+               <children>
+                  <Label text="Diamants">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="idDiamT" editable="false" prefHeight="25.0" prefWidth="66.0" style="-fx-background-radius: 30;" />
+               </children>
+            </VBox>
+            <ImageView fitHeight="43.0" fitWidth="36.0" layoutX="653.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/pngtree-diamond-logo-template-png-image_1548443-removebg-preview.png" />
+               </image>
+            </ImageView>
+           
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

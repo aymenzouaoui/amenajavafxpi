@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="digidreamers.amena.gui.WheelController">
+    <ImageView fx:id="wheel" fitHeight="250.0" fitWidth="250.0" layoutX="167.0" layoutY="27.0" preserveRatio="true">
+        <image>
+            <Image url="@../../../images/immm.png" />
+        </image>
+    </ImageView>
+    <Button fx:id="spinButton" layoutX="226.0" layoutY="330.0" mnemonicParsing="false" onAction="#spinWheel" prefHeight="50.0" prefWidth="133.0" style="-fx-background-radius: 30; -fx-background-color: #37519d;" text="Spin" textFill="WHITE">
+      <font>
+         <Font name="System Bold Italic" size="23.0" />
+      </font></Button>
+</AnchorPane>

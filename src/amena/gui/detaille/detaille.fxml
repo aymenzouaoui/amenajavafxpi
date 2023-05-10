@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane1" prefHeight="571.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.detaille.DetailleController">
+   <children>
+      <Button fx:id="modbtn" layoutX="357.0" layoutY="498.0" mnemonicParsing="false" onAction="#modifier" prefHeight="26.0" prefWidth="126.0" text="Modifier" />
+      <Line endX="633.3999633789062" endY="-3.814697265625E-6" layoutX="157.0" layoutY="64.0" opacity="0.23" startX="-100.0" />
+      <Label layoutX="56.0" layoutY="30.0" prefHeight="28.0" prefWidth="162.0" text="Détails vehicule">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="back" layoutX="561.0" layoutY="498.0" mnemonicParsing="false" onAction="#retourner" prefHeight="26.0" prefWidth="126.0" text="Retourner" />
+      <Button fx:id="supbtn" layoutX="155.0" layoutY="497.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="126.0" text="Supprimer" />
+      <Pane layoutX="262.0" layoutY="92.0" prefHeight="394.0" prefWidth="474.0">
+         <children>
+            <Label layoutX="123.0" layoutY="47.0" prefHeight="26.0" prefWidth="108.0" text="Type             :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="83.0" prefHeight="26.0" prefWidth="118.0" text="Matricule     :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="197.0" prefHeight="26.0" prefWidth="118.0" text="Kilometrage :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="121.0" prefHeight="26.0" prefWidth="108.0" text="Marque        :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="159.0" prefHeight="26.0" prefWidth="108.0" text="Modéle         :">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="233.0" prefHeight="26.0" prefWidth="118.0" text="Couleur          :">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="269.0" prefHeight="26.0" prefWidth="118.0" text="Prix                 :">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labtp" layoutX="235.0" layoutY="49.0" prefHeight="22.0" prefWidth="126.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labmat" layoutX="234.0" layoutY="85.0" prefHeight="22.0" prefWidth="126.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labmar" layoutX="235.0" layoutY="123.0" prefHeight="22.0" prefWidth="126.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labmod" layoutX="234.0" layoutY="161.0" prefHeight="22.0" prefWidth="126.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labkilo" layoutX="233.0" layoutY="201.0" prefHeight="18.0" prefWidth="126.0" />
+            <Label fx:id="labe" layoutX="241.0" layoutY="306.0" prefHeight="18.0" prefWidth="126.0" />
+            <Label fx:id="labprx" layoutX="235.0" layoutY="268.0" prefHeight="28.0" prefWidth="148.0" />
+            <Pane fx:id="pancol" layoutX="253.0" layoutY="232.0" prefHeight="28.0" prefWidth="31.0" />
+            <Label layoutX="123.0" layoutY="302.0" prefHeight="26.0" prefWidth="118.0" text="Etat                 :">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Line endX="-100.0" endY="329.39996337890625" layoutX="200.0" layoutY="32.0" opacity="0.23" startX="-100.0" />
+         </children>
+      </Pane>
+      <ImageView fx:id="imgv1" fitHeight="150.0" fitWidth="200.0" layoutX="118.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="infosup" layoutX="14.0" layoutY="538.0" prefHeight="18.0" prefWidth="545.0" textFill="RED" />
+   </children>
+</AnchorPane>

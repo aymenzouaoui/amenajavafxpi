@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane fx:id="PuserP" prefHeight="571.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ProfilDecController">
+   <Label fx:id="score" layoutX="751.0" layoutY="23.0" prefHeight="25.0" prefWidth="53.0" text="score">
+      <font>
+         <Font name="System Bold Italic" size="14.0" />
+      </font></Label>
+   <Pane layoutX="118.0" layoutY="118.0" prefHeight="403.0" prefWidth="606.0" style="-fx-background-color: #d6d6d6; -fx-background-radius: 30;">
+      <children>
+         <Button fx:id="chat" layoutX="250.0" layoutY="330.0" mnemonicParsing="false" onAction="#chat" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Message" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Button>
+         <Label fx:id="fxxadress" layoutX="389.0" layoutY="208.0" text="Adresse">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+         <Label fx:id="fxdate" layoutX="376.0" layoutY="157.0" text="Date de naissance">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+         <Label fx:id="fxemail" layoutX="394.0" layoutY="265.0" text="Email">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
+         <Label fx:id="fxnom" layoutX="233.0" layoutY="57.0" prefHeight="59.0" prefWidth="179.0" text="nom" textAlignment="CENTER">
+            <font>
+               <Font name="System Bold Italic" size="18.0" />
+            </font>
+         </Label>
+         <Line endX="31.0" endY="106.0" layoutX="278.0" layoutY="184.0" startX="31.0" startY="-33.0" strokeWidth="0.23" />
+         <Text layoutX="117.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Text>
+         <Text layoutX="151.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Text>
+         <Text layoutX="155.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Text>
+         <Circle fx:id="c2" fill="TRANSPARENT" layoutX="376.0" layoutY="46.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+<Rating fx:id="rating" layoutX="391.0" layoutY="41.0" max="5" />
+<Button fx:id="saveButton" layoutX="459.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Evaluer" />
+
+      </children>
+   </Pane>
+   <Circle fx:id="img" fill="#b2b2b2" layoutX="429.0" layoutY="90.0" radius="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+     <Button fx:id="quitterBtn" layoutX="747.0" layoutY="503.0" onAction="#handleQuitterBtn" prefHeight="36.0" prefWidth="81.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Quitter">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Button>
+   <Text layoutX="704.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score">
+      <font>
+         <Font name="System Bold Italic" size="13.0" />
+      </font>
+   </Text>
+   <ImageView fitHeight="36.0" fitWidth="53.0" layoutX="659.0" layoutY="13.0" pickOnBounds="true">
+      <image>
+         <Image url="@../../images/png-clipart-calculation-computer-icons-summation-mathematics-logo-number-removebg-preview.png" />
+      </image>
+   </ImageView>
+</AnchorPane>

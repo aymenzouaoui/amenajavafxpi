@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="400.0" spacing="10.0" stylesheets="@teststyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.gui.FXMLController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <Label text="Ajouter un colis" textAlignment="CENTER" textFill="#0e006b">
+      <VBox.margin>
+         <Insets bottom="50.0" />
+      </VBox.margin>
+      <font>
+         <Font size="24.0" />
+      </font></Label>
+   <Separator prefHeight="26.0" prefWidth="360.0" />
+   <HBox alignment="CENTER" spacing="10.0">
+      <Label text="Nom de l'expéditeur" />
+      <TextField fx:id="nomExpediteurField" prefHeight="25.0" prefWidth="149.0" promptText="Ecrire le nom">
+         <HBox.margin>
+            <Insets left="25.0" />
+         </HBox.margin>
+      </TextField>
+   </HBox>
+   <HBox alignment="CENTER" spacing="10.0">
+      <Label text="Adresse de l'expéditeur">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></Label>
+      <TextField fx:id="adresseExpediteurField" promptText="Ecrire l'adresse" />
+   </HBox>
+   <HBox alignment="CENTER" spacing="10.0">
+      <Label text="Nom du destinataire" />
+      <TextField fx:id="nomDestinataireField" prefHeight="25.0" prefWidth="149.0" promptText="Ecrire le nom">
+         <HBox.margin>
+            <Insets left="27.0" />
+         </HBox.margin></TextField>
+   </HBox>
+   <HBox alignment="CENTER" spacing="10.0">
+      <Label text="Adresse du destinataire   ">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin></Label>
+      <TextField fx:id="adresseDestinataireField" prefHeight="25.0" prefWidth="149.0" promptText="Ecrire l'adresse">
+         <HBox.margin>
+            <Insets right="17.0" />
+         </HBox.margin></TextField>
+   </HBox>
+   <HBox alignment="CENTER" spacing="10.0">
+      <Label text=" Poids">
+         <padding>
+            <Insets right="115.0" />
+         </padding></Label>
+      <TextField fx:id="poidsField" alignment="BOTTOM_CENTER" prefHeight="25.0" prefWidth="149.0" promptText="Ecrire le poid                    ">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></TextField>
+   </HBox>
+   <Separator prefWidth="200.0" />
+   <HBox alignment="CENTER" spacing="10.0">
+      <children>
+         <Button onAction="#ajouterColis" text="Ajouter" />
+         <HBox alignment="CENTER" spacing="10.0">
+            <children>
+               <Button fx:id="quitterBtn" mnemonicParsing="false" onAction="#handleQuitterBtn" text="Quitter" />
+            </children>
+         </HBox>
+         <Button mnemonicParsing="false" onAction="#retournerPagePrecedente" text="Retourner" />
+      </children></HBox>
+</VBox>

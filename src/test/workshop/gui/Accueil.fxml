@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane1" prefHeight="550.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.gui.AccueilController">
+   <children>
+      <Button fx:id="ajoutColisBtn" layoutX="39.0" layoutY="182.0" onAction="#onAjoutColis" prefHeight="167.0" prefWidth="132.0" text="Ajouter un colis" textAlignment="CENTER" />
+      <Button fx:id="supprimerColisBtn" layoutX="222.0" layoutY="182.0" onAction="#onSupprimerColis" prefHeight="167.0" prefWidth="146.0" text="Supprimer un colis" />
+      <Button fx:id="modifierColisBtn" layoutX="423.0" layoutY="182.0" onAction="#onModifierColis" prefHeight="167.0" prefWidth="146.0" text="Modifier un colis" />
+      <Button fx:id="afficherColisBtn" layoutX="616.0" layoutY="182.0" onAction="#onAfficherColis" prefHeight="167.0" prefWidth="166.0" text="Afficher les colis" />
+      <Separator layoutX="393.0" layoutY="182.0" orientation="VERTICAL" prefHeight="167.0" prefWidth="6.0" />
+      <Separator layoutX="577.0" layoutY="184.0" orientation="VERTICAL" prefHeight="167.0" prefWidth="35.0" />
+      <Label layoutX="55.0" layoutY="32.0" prefHeight="35.0" prefWidth="204.0" text="Gestion Des Colis" textFill="#1300a4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="44.0" fitWidth="52.0" layoutX="83.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Media/button-304224_960_720.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="273.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Media/clear-1727486_1280.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="48.0" layoutX="474.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Media/téléchargement__5_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="52.0" layoutX="681.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Media/72647.png" />
+         </image>
+      </ImageView>
+      <Line endX="555.0" layoutX="226.0" layoutY="71.0" startX="-170.0" strokeWidth="0.23" />
+      <Separator layoutX="192.0" layoutY="182.0" orientation="VERTICAL" prefHeight="167.0" prefWidth="6.0" />
+   </children>
+</AnchorPane>

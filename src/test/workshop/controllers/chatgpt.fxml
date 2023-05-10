@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@teststyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.controllers.ChatgptController">
+    <children>
+        <TextField id="chatbot" fx:id="inputQuestion" layoutX="25.0" layoutY="22.0" prefWidth="550.0" promptText="Posez votre question ici" stylesheets="@style.css" />
+        <Button fx:id="btnSend" layoutX="500.0" layoutY="65.0" mnemonicParsing="false" onAction="#onSend" text="Envoyer" />
+        <Text fx:id="outputAnswer" layoutX="25.0" layoutY="115.0" text="Réponse" wrappingWidth="550.0" />
+    </children>
+</AnchorPane>

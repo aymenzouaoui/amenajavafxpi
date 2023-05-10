@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="314.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.controllers.PositionController">
+    <top>
+        <Button onAction="#onSharePositionClicked" text="Partager ma position" />
+    </top>
+    <center>
+        <ImageView fx:id="mapView" fitHeight="163.0" fitWidth="318.0" />
+    </center>
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+</BorderPane>

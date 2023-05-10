@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6; -fx-border-radius: 30;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="amena.gui.InterfaceAccueil.AccueilController">
+   <children>
+      <Label layoutX="144.0" layoutY="375.0" text="Label" textFill="#d7d7d7" />
+      <AnchorPane prefHeight="45.0" prefWidth="842.0" style="-fx-background-color: #023c6b;">
+         <children>
+            <ImageView fx:id="exit" fitHeight="24.0" fitWidth="25.0" layoutX="803.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="17.799999999999997" AnchorPane.topAnchor="19.0">
+               <image>
+                  <Image url="@../../img/cross.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="399.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AMENA">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="11.0" layoutY="6.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="97.0" text="LOGIN" />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="pn1" layoutX="39.0" layoutY="102.0" prefHeight="416.0" prefWidth="282.0" style="-fx-background-color: #d7d7d7; -fx-border-radius: 30;" styleClass="pk" stylesheets="@../style.css">
+         <children>
+            <ImageView fitHeight="221.0" fitWidth="170.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="38.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/checked.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="37.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/checked.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="37.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/checked.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="37.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/checked.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="527.0" layoutY="360.0" prefHeight="30.0" prefWidth="91.0" text="Devenir">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pn11" layoutX="365.0" layoutY="102.0" prefHeight="196.0" prefWidth="404.0" style="-fx-background-color: #d7d7d7; -fx-border-radius: 30;" styleClass="pk" stylesheets="@../style.css" />
+      <Button layoutX="421.0" layoutY="416.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="130.0" text="Transporteur" />
+      <Button layoutX="573.0" layoutY="416.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="130.0" text="Expediteur" />
+   </children>
+</AnchorPane>

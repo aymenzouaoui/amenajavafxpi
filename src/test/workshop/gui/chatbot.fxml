@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.controllers.ChatbotController">
+
+<center>
+    <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="200.0" spacing="10.0">
+
+        <Button text="Question 1 : Comment mes données sont-elles protégées ?" onAction="#onQuestion1Clicked" />
+        <Button text="Question 2 : Comment puis-je supprimer mon compte ?" onAction="#onQuestion2Clicked" />
+        <Button text="Question 3 : Comment puis-je récupérer mon mot de passe ?" onAction="#onQuestion3Clicked" />
+        <Button text="Question 4 : Comment puis-je contacter le service client ?" onAction="#onQuestion4Clicked" />
+        <Button text="Question 5 : Comment puis-je modifier mes informations personnelles ?" onAction="#onQuestion5Clicked" />
+
+    </VBox>
+</center>
+
+<bottom>
+    <Label fx:id="answerLabel" text="Sélectionnez une question ci-dessus pour obtenir une réponse." />
+</bottom>
+</BorderPane>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PuserM" prefHeight="466.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.modifier">
+    <VBox layoutX="259.0" layoutY="61.0" prefHeight="344.0" prefWidth="245.0" spacing="10.0">
+      <JFXTextField fx:id="fxnom" />
+      <JFXTextField fx:id="fxprenom" />
+      <JFXTextField fx:id="fxxadress" />
+      <JFXTextField fx:id="fxcin" />
+      <JFXTextField fx:id="fxemail" />
+      <HBox prefHeight="42.0" prefWidth="213.0" spacing="35.0">
+         <children>
+            <JFXCheckBox fx:id="fxtransorteur" text="Transporteur" unCheckedColor="#d72f2f" />
+            <JFXCheckBox fx:id="fxclient" text="Client" unCheckedColor="#c92121" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="14.0" />
+         </padding>
+      </HBox>
+      <JFXTextField fx:id="fxnum" />
+      <JFXPasswordField fx:id="fxpassword" />
+      <JFXDatePicker fx:id="fxdaten" defaultColor="#0d51c6" prefHeight="25.0" prefWidth="247.0" />
+       
+    </VBox>
+   <Button fx:id="chat" layoutX="566.0" layoutY="23.0" mnemonicParsing="false" onAction="#chat" prefHeight="29.0" prefWidth="90.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Messagerie" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Button>
+     <Button fx:id="quitterBtn" layoutX="51.0" layoutY="23.0" onAction="#handleQuitterBtn" prefHeight="29.0" prefWidth="72.0" style="-fx-background-color: #023c6b; -fx-background-radius: 30;" text="Retour" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Button>
+   <Button fx:id="btnsuprimer" layoutX="575.0" layoutY="413.0" mnemonicParsing="false" onAction="#supprimer" style="-fx-background-color: #E42217; -fx-background-radius: 30;" text="suprimer" textFill="#fcfcfc">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Button>
+   <Label layoutX="182.0" layoutY="61.0" text="Nom" />
+   <Label layoutX="174.0" layoutY="98.0" text="Prénom" />
+   <Label layoutX="175.0" layoutY="138.0" text="Adresse" />
+   <Label layoutX="179.0" layoutY="205.0" text="E-mail" />
+   <Label layoutX="186.0" layoutY="167.0" text="Cin" />
+   <Button layoutX="464.0" layoutY="413.0" mnemonicParsing="false" onAction="#modifierUtilisateur" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="modifier" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Button>
+   <Label layoutX="179.0" layoutY="249.0" text="Rôle" />
+   <ImageView fx:id="img" fitHeight="137.0" fitWidth="156.0" layoutX="533.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+  
+   <Label layoutX="111.0" layoutY="294.0" text="Numéro de téléphone" />
+   <Label layoutX="137.0" layoutY="328.0" text="Mot de passe" />
+   <Label fx:id="date" layoutX="166.0" layoutY="368.0" text="Date" />
+   <JFXButton fx:id="btnimg" layoutX="575.0" layoutY="316.0" onAction="#handleUploadButtonAction" ripplerFill="#7ba4edc9" style="-fx-background-radius: 30;" text="image" textAlignment="CENTER" textFill="#a82e2e" textOverrun="CENTER_WORD_ELLIPSIS">
+      <font>
+         <Font size="14.0" />
+      </font>
+      <effect>
+         <Blend />
+      </effect>
+   </JFXButton>
+</AnchorPane>

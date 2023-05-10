@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="paneA2" prefHeight="550.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.workshop.gui.ModifierController">
+   <children>
+      <Label layoutX="370.0" layoutY="24.0" text="Modifier un colis">
+         <font>
+            <Font name="MS Reference Specialty" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nomExField" layoutX="117.0" layoutY="119.0" prefHeight="26.0" prefWidth="245.0" />
+      <TextField fx:id="adressExField" layoutX="117.0" layoutY="194.0" prefHeight="26.0" prefWidth="245.0" />
+      <Text layoutX="117.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom d'expediteur">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Label layoutX="119.0" layoutY="165.0" />
+      <TextField fx:id="nomDesField" layoutX="115.0" layoutY="262.0" prefHeight="26.0" prefWidth="245.0" />
+      <TextField fx:id="adressDesField" layoutX="115.0" layoutY="334.0" prefHeight="26.0" prefWidth="245.0" />
+      <TextField fx:id="poidsField" layoutX="116.0" layoutY="420.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label layoutX="115.0" layoutY="306.0" />
+      <Button fx:id="btnMod" layoutX="200.0" layoutY="485.0" mnemonicParsing="false" onAction="#ModifierColis" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Modifier" textFill="WHITE" />
+      <Button layoutX="41.0" layoutY="44.0" mnemonicParsing="false" onAction="#retournerPagePrecedente" prefHeight="25.0" prefWidth="76.0" style="-fx-border-radius: 30; -fx-background-color: #81baff; -fx-background-radius: 30;" text="Retourner" textFill="WHITE" />
+      <ListView fx:id="lvColis" layoutX="477.0" layoutY="119.0" prefHeight="287.0" prefWidth="292.0" />
+      <Line endX="284.0" layoutX="365.0" layoutY="69.0" startX="-100.0" />
+      <Text layoutX="115.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse d'expediteur">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="117.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du destinataire">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="117.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse du destinataire">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="119.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poids ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneres" prefHeight="457.0" prefWidth="834.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ReservationInterface.ResInterController">
+   <children>
+      <ListView fx:id="lv" layoutX="14.0" layoutY="72.0" prefHeight="345.0" prefWidth="560.0" style="-fx-background-color: #d6d6d6;" styleClass="list-cell" stylesheets="@../style.css" />
+      <Pane layoutX="624.0" layoutY="66.0" prefHeight="100.0" prefWidth="170.0" styleClass="pane" stylesheets="@../style.css">
+         <children>
+            <Label layoutX="36.0" layoutY="68.0" prefHeight="25.0" prefWidth="104.0" text="Reservations">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbrvtr11" layoutX="13.0" layoutY="7.0">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="8.0" prefHeight="48.0" prefWidth="80.0" text="100">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Line endX="-100.0" endY="360.5999755859375" layoutX="695.0" layoutY="65.0" opacity="0.23" startX="-100.0" />
+      <Pane layoutX="624.0" layoutY="197.0" prefHeight="100.0" prefWidth="170.0" styleClass="pane" stylesheets="@../style.css">
+         <children>
+            <Label layoutX="7.0" layoutY="71.0" prefHeight="25.0" prefWidth="158.0" text="Reservations en cours">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbrvtr111" layoutX="13.0" layoutY="7.0">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="10.0" prefHeight="48.0" prefWidth="80.0" text="100">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="624.0" layoutY="323.0" prefHeight="100.0" prefWidth="170.0" styleClass="pane" stylesheets="@../style.css">
+         <children>
+            <Label layoutX="-2.0" layoutY="67.0" prefHeight="25.0" prefWidth="177.0" text="Reservations en attente">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbrvtr112" layoutX="13.0" layoutY="7.0">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" prefHeight="48.0" prefWidth="80.0" text="100">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

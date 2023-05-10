@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="chatPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="839.0" style="-fx-background-color: #00416A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ChatController">
+   <children>
+      <Text fx:id="chatTitle" fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat Title" textAlignment="CENTER" wrappingWidth="204.79166666666666">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      
+      
+       <TextArea fx:id="messageField" layoutX="14.0" layoutY="47.0" prefHeight="83.0" prefWidth="401.0" promptText="Type your message here" />
+      <Button fx:id="sendButton" layoutX="433.0" layoutY="47.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" style="-fx-background-radius: 30;" text="Envoyer">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <ListView fx:id="messageList" layoutX="14.0" layoutY="140.0" prefHeight="292.0" prefWidth="524.0" />
+   
+      <Button fx:id="bafficher" layoutX="448.0" layoutY="488.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Afficher" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+        
+      
+      <ListView fx:id="fxlisteusert" layoutX="586.0" layoutY="128.0" prefHeight="381.0" prefWidth="235.0" />
+      <Button fx:id="btnback" layoutX="716.0" layoutY="35.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="105.0" text="Retour" />
+      <TextField fx:id="fxrecherche" layoutX="716.0" layoutY="87.0" prefHeight="25.0" prefWidth="75.0" text="....................................." />
+      <Button fx:id="btnrecherche" layoutX="799.0" layoutY="87.0" mnemonicParsing="false" onAction="#userFind" prefHeight="25.0" prefWidth="24.0" text="Button" />
+   </children>
+</AnchorPane>

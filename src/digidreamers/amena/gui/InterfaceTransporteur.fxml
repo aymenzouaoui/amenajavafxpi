@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane17" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="digidreamers.amena.gui.InterfaceTransporteurController">
+   <children>
+      <Button fx:id="btnParticiper" layoutX="330.0" layoutY="201.0" mnemonicParsing="false" onAction="#compParticipation" prefHeight="17.0" prefWidth="138.0" style="-fx-background-radius: 30;" text="Participer" textFill="#072c4d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <VBox layoutX="390.0" layoutY="13.0" prefHeight="76.0" prefWidth="85.0">
+         <children>
+            <Label text="Score">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <TextField fx:id="idScore" prefHeight="25.0" prefWidth="59.0" style="-fx-background-radius: 30;" />
+         </children>
+      </VBox>
+      <VBox layoutX="509.0" layoutY="13.0" prefHeight="76.0" prefWidth="85.0">
+         <children>
+            <Label text="Diamants">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <TextField fx:id="idDiam" prefHeight="25.0" prefWidth="66.0" style="-fx-background-radius: 30;" />
+         </children>
+      </VBox>
+      <ListView fx:id="lvC" layoutX="62.0" layoutY="95.0" prefHeight="211.0" prefWidth="237.0" style="-fx-background-color: #072c4d;" />
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="355.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/png-clipart-calculation-computer-icons-summation-mathematics-logo-number-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="36.0" layoutX="475.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/pngtree-diamond-logo-template-png-image_1548443-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAffGifts" layoutX="35.0" layoutY="348.0" mnemonicParsing="false" onAction="#affichierGiftss" style="-fx-background-color: #072c4d; -fx-background-radius: 30;" text="Afficher les cadeaux" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnConvert" layoutX="444.0" layoutY="60.0" mnemonicParsing="false" onAction="#ConvertScore" style="-fx-background-radius: 30; -fx-background-color: #81baff;" text="Convertir Score" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnM" layoutX="35.0" layoutY="26.0" mnemonicParsing="false" onAction="#meteoApi" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Météo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane1" prefHeight="571.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="digidreamers.amena.gui.GestionGamificationController">
+   <children>
+      <ImageView fitHeight="207.0" fitWidth="842.0" layoutY="-6.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../images/Bplans-Headers-2021-14.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="button3" ellipsisString="" layoutX="609.0" layoutY="39.0" mnemonicParsing="false" onAction="#handlebc3" prefHeight="39.0" prefWidth="221.0" style="-fx-background-radius: 30;" text="+ Ajouter Compétition" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ListView fx:id="listView" layoutX="32.0" layoutY="238.0" prefHeight="259.0" prefWidth="256.0" />
+      <Pane layoutY="201.0" prefHeight="7.0" prefWidth="842.0" style="-fx-background-color: #2f4558;" />
+      <Button fx:id="button1" layoutX="363.0" layoutY="500.0" mnemonicParsing="false" onAction="#handlebc1" prefHeight="35.0" prefWidth="137.0" style="-fx-background-radius: 30; -fx-background-color: #81baff;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="button2" layoutX="582.0" layoutY="500.0" mnemonicParsing="false" onAction="#handlebc2" prefHeight="35.0" prefWidth="137.0" style="-fx-background-radius: 30; -fx-background-color: #E42217;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ImageView fx:id="imgifts" fitHeight="94.0" fitWidth="126.0" layoutX="695.0" layoutY="218.0" onMouseClicked="#giftsAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Capture_d_écran_2023-02-22_143039-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="332.0" layoutY="224.0" text="Détails Compétition">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <VBox layoutX="353.0" layoutY="276.0" prefHeight="200.0" prefWidth="137.0" spacing="18.0">
+         <children>
+            <Label text="Titre" />
+            <Label text="Date de début" />
+            <Label text="Date de fin" />
+            <Label text="Type" />
+            <Label text="Nombre de participants" />
+         </children>
+      </VBox>
+      <VBox layoutX="568.0" layoutY="276.0" prefHeight="200.0" prefWidth="100.0" spacing="18.0">
+         <children>
+            <Label fx:id="titrelabel" />
+            <Label fx:id="date_deblabel" />
+            <Label fx:id="date_finlabel" />
+            <Label fx:id="typelabel" />
+            <Label fx:id="nbplabel" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

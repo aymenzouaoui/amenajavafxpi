@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #152F4F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.TransporteurController">
+   <children>
+      <TextArea layoutX="62.0" layoutY="24.0" prefHeight="45.0" prefWidth="222.0" text="Je suis transporteur" />
+      <Label layoutX="76.0" layoutY="124.0" />
+      <Label fx:id="fxnom" layoutX="76.0" layoutY="183.0" text="Label" />
+      <Label fx:id="fxprenom" layoutX="76.0" layoutY="240.0" text="Label" />
+      <Label fx:id="fxcin" layoutX="76.0" layoutY="308.0" text="Label" />
+   </children>
+</AnchorPane>

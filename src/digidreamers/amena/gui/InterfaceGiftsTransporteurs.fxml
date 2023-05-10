@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane20" prefHeight="430.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="digidreamers.amena.gui.InterfaceGiftsTransporteursController">
+   <children>
+      <ListView fx:id="listViewGifts" fixedCellSize="0.0" layoutX="210.0" layoutY="126.0" prefHeight="259.0" prefWidth="256.0" />
+      <Button fx:id="btnRe" layoutX="32.0" layoutY="359.0" mnemonicParsing="false" onAction="#retourVersL" style="-fx-background-radius: 30; -fx-background-color: #072c4d;" text="Retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="35.0" layoutY="31.0" text="Liste des cadeaux" textFill="#072c4d">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnConv" layoutX="14.0" layoutY="226.0" mnemonicParsing="false" onAction="#convertDiam" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Convertir les points" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <VBox layoutX="400.0" layoutY="23.0" prefHeight="76.0" prefWidth="85.0">
+         <children>
+            <Label text="Score">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="idScoreT" prefHeight="25.0" prefWidth="59.0" style="-fx-background-radius: 30;" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="365.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/png-clipart-calculation-computer-icons-summation-mathematics-logo-number-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="503.0" layoutY="23.0" prefHeight="76.0" prefWidth="85.0" />
+   </children>
+</AnchorPane>

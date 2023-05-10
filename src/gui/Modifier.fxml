@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="841.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="gui.ModifierController">
+    <children>
+      <TextField fx:id="tfPrixM" layoutX="60.0" layoutY="330.0" prefHeight="26.0" prefWidth="175.0" promptText="Entrer le prix" />
+      <TextField fx:id="tfVille_DM" layoutX="60.0" layoutY="198.0" prefHeight="26.0" prefWidth="175.0" promptText="Ville de depart" />
+      <TextField fx:id="tfVille_AM" layoutX="315.0" layoutY="198.0" prefHeight="26.0" prefWidth="175.0" promptText="Ville d'arrivee" />
+      <TextField fx:id="tfDate_DM" layoutX="60.0" layoutY="268.0" prefHeight="26.0" prefWidth="175.0" promptText="Date de depart" />
+      <TextField fx:id="tfDate_AM" layoutX="315.0" layoutY="268.0" prefHeight="26.0" prefWidth="175.0" promptText="Date d'arrivee" />
+      <TextArea fx:id="tfDescM" layoutX="60.0" layoutY="403.0" prefHeight="152.0" prefWidth="294.0" promptText="Description" />
+      <TextField fx:id="tfIDM" layoutX="60.0" layoutY="129.0" prefHeight="26.0" prefWidth="207.0" promptText="Entrer l'ID de l'annonce à Modifier" />
+      <Button fx:id="btnMod" layoutX="677.0" layoutY="256.0" mnemonicParsing="false" onAction="#modif" text="Valider" textFill="#55d5e0">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneA30" prefHeight="464.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.interfaceVelo.AjoutVeloController">
+   <children>
+      <TextField fx:id="tfmat" layoutX="136.0" layoutY="61.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label layoutX="137.0" layoutY="28.0" prefHeight="30.0" prefWidth="90.0" text="Matricule">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfmar" layoutX="136.0" layoutY="148.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label layoutX="137.0" layoutY="118.0" prefHeight="30.0" prefWidth="90.0" text="Marque">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfprx" layoutX="450.0" layoutY="61.0" prefHeight="26.0" prefWidth="245.0" />
+      <Label layoutX="457.0" layoutY="28.0" prefHeight="30.0" prefWidth="79.0" text="Prix">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="289.0" prefHeight="30.0" prefWidth="90.0" text="Couleur">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Line endX="-99.99996948242188" endY="322.4000244140625" layoutX="520.0" layoutY="56.0" opacity="0.22" startX="-100.0" />
+      <ColorPicker fx:id="tfclr" layoutX="134.0" layoutY="330.0" prefHeight="26.0" prefWidth="246.0" />
+      <Button fx:id="btnpic" layoutX="449.0" layoutY="120.0" mnemonicParsing="false" onAction="#ajoutpic" prefHeight="26.0" prefWidth="246.0" text="Ajouter photo" />
+      <Button layoutX="340.0" layoutY="404.0" mnemonicParsing="false" onAction="#ajouterBc" prefHeight="26.0" prefWidth="158.0" text="Ajouter" />
+      <ImageView fx:id="imgv" fitHeight="136.0" fitWidth="178.0" layoutX="483.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="137.0" layoutY="196.0" prefHeight="30.0" prefWidth="90.0" text="Modèle">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfmod" layoutX="135.0" layoutY="232.0" prefHeight="26.0" prefWidth="245.0" />
+   </children>
+</AnchorPane>
