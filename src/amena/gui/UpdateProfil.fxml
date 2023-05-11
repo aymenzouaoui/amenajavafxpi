@@ -33,11 +33,12 @@
          <JFXTextField fx:id="emailTextField" />
              <Label style="-fx-background-color: #ffffff;" text="Mot de passe :" />
          <JFXPasswordField fx:id="motDePasseTextField" />
-         <HBox prefHeight="17.0" prefWidth="292.0">
+         <HBox prefHeight="18.0" prefWidth="251.0">
             <children>
                <Label prefHeight="17.0" prefWidth="39.0" text="Role:" />
                <JFXCheckBox fx:id="fxclient" text="Client" />
                <JFXCheckBox fx:id="fxtransoorteur" text="Transporteur" />
+               <JFXCheckBox fx:id="fxtadmin" prefHeight="18.0" prefWidth="99.0" text="Admin" />
             </children>
          </HBox>
          <HBox prefHeight="100.0" prefWidth="200.0">

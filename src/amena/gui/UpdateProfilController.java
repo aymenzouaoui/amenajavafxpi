@@ -64,7 +64,6 @@ public class UpdateProfilController implements Initializable {
     @FXML
     private JFXTextField emailTextField;
 
-    
     @FXML
     private Button modifierButton;
 
@@ -85,6 +84,8 @@ public class UpdateProfilController implements Initializable {
     private JFXCheckBox dea;
     @FXML
     private JFXPasswordField motDePasseTextField;
+    @FXML
+    private JFXCheckBox fxtadmin;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -128,12 +129,18 @@ public class UpdateProfilController implements Initializable {
             img.setFill(new ImagePattern(img1));
 
             String role = user.getRole();
-            if (role.equals("transporteur")) {
+            if (role.equals("[\"ROLE_TRANSPORTEUR\"]")) {
                 fxtransoorteur.setSelected(true);
                 fxclient.setSelected(false);
-            } else if (role.equals("client")) {
+                fxtadmin.setSelected(false);
+            } else if (role.equals("[\"ROLE_USER\"]")) {
                 fxtransoorteur.setSelected(false);
                 fxclient.setSelected(true);
+                fxtadmin.setSelected(false);
+            } else if (role.equals("[\"ROLE_ADMIN\"]")) {
+                fxtransoorteur.setSelected(false);
+                fxclient.setSelected(false);
+                fxtadmin.setSelected(true);
             }
             boolean etat = user.isStatus();
             System.out.println(etat);
@@ -182,7 +189,7 @@ public class UpdateProfilController implements Initializable {
                     }
                 }
 
-                if (nom.isEmpty() || prenom.isEmpty() || adresse.isEmpty() || cin.isEmpty() || email.isEmpty()/* || motDePasse.isEmpty() */|| dateNaissance == null) {
+                if (nom.isEmpty() || prenom.isEmpty() || adresse.isEmpty() || cin.isEmpty() || email.isEmpty()/* || motDePasse.isEmpty() */ || dateNaissance == null) {
                     Alert emptyAlert = new Alert(Alert.AlertType.ERROR);
                     emptyAlert.setTitle("Erreur");
                     emptyAlert.setHeaderText(null);
@@ -210,11 +217,13 @@ public class UpdateProfilController implements Initializable {
                 }
                 String role = "";
 
-                if (fxtransoorteur.isSelected() && !fxclient.isSelected()) {
-                    role = "transporteur";
-                } else if (fxclient.isSelected() && !fxtransoorteur.isSelected()) {
-                    role = "client";
-                } else if (fxtransoorteur.isSelected() && fxclient.isSelected()) {
+                if (fxtransoorteur.isSelected() && !fxclient.isSelected()&&!fxtadmin.isSelected()) {
+                    role = "[\"ROLE_TRANSPORTEUR\"]";
+                } else if (fxclient.isSelected() && !fxtransoorteur.isSelected()&&!fxtadmin.isSelected()) {
+                    role = "[\"ROLE_USER\"]";
+                } else if (!fxclient.isSelected() && !fxtransoorteur.isSelected()&&fxtadmin.isSelected()) {
+                    role = "[\"ROLE_Admin\"]";
+                }else{
                     // Display an alert to ask the user to choose only one role
                     Alert roleAlert = new Alert(Alert.AlertType.ERROR);
                     roleAlert.setTitle("Erreur");

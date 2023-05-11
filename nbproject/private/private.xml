@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ModifiermotpasseController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/modifier.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/SupprimerProfilController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/utils/MyConnection.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ChatController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ChatUserController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ValidationTransporteurController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/CreateAccountController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/services/UserService.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/SSuprimerController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/UpdateProfilController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/LoginAccountController.java</file>
         </group>

@@ -169,9 +169,9 @@ public class modifier implements Initializable {
                 String role = "";
 
                 if (fxtransorteur.isSelected() && !fxclient.isSelected()) {
-                    role = "transporteur";
+                    role = "[\"ROLE_TRANSPORTEUR\"]";
                 } else if (fxclient.isSelected() && !fxtransorteur.isSelected()) {
-                    role = "client";
+                    role = "[\"ROLE_USER\"]";
                 } else if (fxtransorteur.isSelected() && fxclient.isSelected()) {
                     // Display an alert to ask the user to choose only one role
                     Alert roleAlert = new Alert(Alert.AlertType.ERROR);
