@@ -230,6 +230,7 @@ public class UserService implements InterfaceCRUD<User> {
                 p.setEmail(RS.getNString(2));
                 p.setTokenExpirationDate(RS.getDate(17));
                 p.setImage(RS.getString(15));
+                p.setStatus(RS.getBoolean(11));
                 
 
                 list.add(p);
@@ -263,6 +264,7 @@ public class UserService implements InterfaceCRUD<User> {
                 p.setEmail(RS.getNString(2));
                 p.setTokenExpirationDate(RS.getDate(17));
                 p.setImage(RS.getString(15));
+                p.setStatus(RS.getBoolean(11));
                 
                 list.add(p);
             }
@@ -321,6 +323,7 @@ public class UserService implements InterfaceCRUD<User> {
                 user.setImage(rs.getString("image"));
                 user.setCompteExpirationDate(rs.getDate("compte_ex"));
                 user.setTokenExpirationDate(rs.getDate("token_ex"));
+              
             }
         } catch (SQLException ex) {
             System.out.println("Failed to get user: " + ex.getMessage());
@@ -507,5 +510,41 @@ public class UserService implements InterfaceCRUD<User> {
         }
     }
      */
+    
+   public List<User> getUsersByNom(String nom) {
+    List<User> users = new ArrayList<>();
+    try {
+        String query = "SELECT * FROM `user` WHERE `nom`=?";
+        PreparedStatement statement = cnx.prepareStatement(query);
+        statement.setString(1, nom);
+        ResultSet rs = statement.executeQuery();
+        while (rs.next()) {
+            User user = new User();
+            user.setId(rs.getInt("id"));
+            user.setNom(rs.getString("nom"));
+            user.setPrenom(rs.getString("prenom"));
+            user.setAdress(rs.getString("adress"));
+            user.setCin(rs.getString("cin"));
+            user.setDate_naissance(rs.getDate("date_naissance"));
+            user.setDate_creation_c(rs.getDate("date_creation_c"));
+            user.setStatus(rs.getInt("status") == 1);
+            user.setRole(rs.getString("roles"));
+            user.setMot_pass(rs.getString("password"));
+            user.setEmail(rs.getString("email"));
+            user.setToken(rs.getString("token"));
+            user.setScore(rs.getString("score"));
+            user.setNum(rs.getString("numtel"));
+            user.setImage(rs.getString("image"));
+            user.setCompteExpirationDate(rs.getDate("compte_ex"));
+            user.setTokenExpirationDate(rs.getDate("token_ex"));
+            users.add(user);
+        }
+    } catch (SQLException ex) {
+        System.out.println("Failed to get users: " + ex.getMessage());
+        // log or rethrow the exception
+    }
+    return users;
+}
+
 
 }

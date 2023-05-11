@@ -10,6 +10,9 @@ import amena.model.Message;
 import amena.model.User;
 import amena.services.ChatService;
 import amena.services.UserService;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -36,6 +39,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -61,7 +65,7 @@ public class ChatController implements Initializable {
     @FXML
     private ListView<Message> messageList;
     @FXML
-    private ListView<User> fxlisteusert;
+    private JFXListView<User> fxlisteusert;
 
     /**
      * Initializes the controller class.
@@ -72,11 +76,11 @@ public class ChatController implements Initializable {
     @FXML
     private Button bafficher;
     @FXML
-    private Button btnback;
+    private JFXButton btnback;
     @FXML
-    private TextField fxrecherche;
+    private JFXTextField fxrecherche;
     @FXML
-    private Button btnrecherche;
+    private JFXButton btnrecherche;
 
     public ChatController() {
         try {
@@ -188,6 +192,11 @@ public class ChatController implements Initializable {
                         if (user != null) {
                             // afficher le nom de l'utilisateur dans la cellule de la liste
                             setText(user.getNom());
+                            if (user.isStatus()) {
+                                setTextFill(Color.GREEN); // mettre la couleur de texte en vert
+                            } else {
+                                setTextFill(Color.RED); // mettre la couleur de texte en rouge
+                            }
                         } else {
                             setText(null);
                         }
@@ -202,10 +211,10 @@ public class ChatController implements Initializable {
                 try {
                     // récupérer l'utilisateur sélectionné
                     User user = fxlisteusert.getSelectionModel().getSelectedItem();
-                    
+
                     // afficher le nom de l'utilisateur sélectionné dans le titre de la fenêtre de chat
                     chatTitle.setText("Chat avec " + user.getNom());
-                    
+
                     // mettre à jour la liste des messages avec les messages de l'utilisateur sélectionné
                     messageList.setItems(FXCollections.observableArrayList());
                     User selectedUser = fxlisteusert.getSelectionModel().getSelectedItem();
@@ -222,7 +231,7 @@ public class ChatController implements Initializable {
                                 @Override
                                 protected void updateItem(Message item, boolean empty) {
                                     super.updateItem(item, empty);
-                                    
+
                                     if (item == null || empty) {
                                         setText(null);
                                     } else {
@@ -239,7 +248,7 @@ public class ChatController implements Initializable {
                                         }
                                     }
                                 }
-                                
+
                             };
                         }
                     });
@@ -264,32 +273,37 @@ public class ChatController implements Initializable {
     }
 
     @FXML
-    private void userFind(ActionEvent event) throws SQLException {
-        String email = fxrecherche.getText(); // userEmail est l'objet TextField qui contient l'email entré par l'utilisateur
-        User user = userService.getUserByEmai(email);
-        if (user != null) {
-            ObservableList<User> userList = FXCollections.observableArrayList();
-            userList.add(user);
-            fxlisteusert.setItems(userList);
-            fxlisteusert.setCellFactory(param -> new ListCell<User>() {
-                @Override
-                protected void updateItem(User user, boolean empty) {
-                    super.updateItem(user, empty);
-                    if (empty || user == null) {
-                        setText(null);
+private void userFind(ActionEvent event) throws SQLException {
+    String email = fxrecherche.getText(); // userEmail est l'objet TextField qui contient l'email entré par l'utilisateur
+    List<User> userList = userService.getUsersByNom(email);
+    if (!userList.isEmpty()) {
+        ObservableList<User> observableUserList = FXCollections.observableArrayList(userList);
+        fxlisteusert.setItems(observableUserList);
+        fxlisteusert.setCellFactory(param -> new ListCell<User>() {
+            @Override
+            protected void updateItem(User user, boolean empty) {
+                super.updateItem(user, empty);
+                if (empty || user == null) {
+                    setText(null);
+                } else {
+                    setText(user.getNom()); // Afficher seulement le nom de l'utilisateur dans la liste
+                    if (user.isStatus()) {
+                        setTextFill(Color.GREEN); // Si le status est vrai, afficher en vert
                     } else {
-                        setText(user.getNom()); // Afficher seulement le nom de l'utilisateur dans la liste
-                        if (user.isStatus()) {
-                            setTextFill(Color.GREEN); // Si le status est vrai, afficher en vert
-                        } else {
-                            setTextFill(Color.RED); // Si le status est faux, afficher en rouge
-                        }
+                        setTextFill(Color.RED); // Si le status est faux, afficher en rouge
                     }
                 }
-            });
-        } else {
-            // Si aucun utilisateur n'est trouvé, effacer la liste des utilisateurs
-            fxlisteusert.setItems(null);
-        }
+            }
+        });
+    } else {
+        // Si aucun utilisateur n'est trouvé, effacer la liste des utilisateurs
+        fxlisteusert.setItems(null);
     }
+}
+
+    @FXML
+    private void rech(KeyEvent event) {
+        
+    }
+
 }
