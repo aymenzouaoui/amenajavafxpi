@@ -37,6 +37,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -125,15 +126,25 @@ public class ChatController implements Initializable {
                         if (item == null || empty) {
                             setText(null);
                         } else {
-                            setText(item.getContent());
+                            try {
+                                UserService userService = new UserService();
+                                User sender = userService.getByID(item.getSenderId());
+                                String senderName = sender.getNom();
+                                String messageContent = item.getContent();
+                                String text = senderName + ": " + messageContent;
+                                setText(text);
+                                setStyle("-fx-text-fill: green; -fx-font-weight: bold;");
+                            } catch (SQLException ex) {
+                                Logger.getLogger(ChatController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                         }
                     }
+
                 };
             }
         });
-        
-    // Effacer le champ de saisie de message
-    messageField.clear();
+        // Effacer le champ de saisie de message
+        messageField.clear();
     }
 
     @Override
@@ -188,15 +199,56 @@ public class ChatController implements Initializable {
         fxlisteusert.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<User>() {
             @Override
             public void changed(ObservableValue<? extends User> observable, User oldValue, User newValue) {
-                // récupérer l'utilisateur sélectionné
-                User user = fxlisteusert.getSelectionModel().getSelectedItem();
-
-                // afficher le nom de l'utilisateur sélectionné dans le titre de la fenêtre de chat
-                //chatTitle.setText("Chat avec " + user.getNom());
+                try {
+                    // récupérer l'utilisateur sélectionné
+                    User user = fxlisteusert.getSelectionModel().getSelectedItem();
+                    
+                    // afficher le nom de l'utilisateur sélectionné dans le titre de la fenêtre de chat
+                    chatTitle.setText("Chat avec " + user.getNom());
+                    
+                    // mettre à jour la liste des messages avec les messages de l'utilisateur sélectionné
+                    messageList.setItems(FXCollections.observableArrayList());
+                    User selectedUser = fxlisteusert.getSelectionModel().getSelectedItem();
+                    ChatService chat = new ChatService();
+                    UserService u = new UserService();
+                    User p = u.getUserByEmai(semail);
+                    List<Message> messages = chat.getChatsBySenderReceiverIds(p.getId(), selectedUser.getId());
+                    ObservableList<Message> observableMessages = FXCollections.observableArrayList(messages);
+                    messageList.setItems(observableMessages);
+                    messageList.setCellFactory(new Callback<ListView<Message>, ListCell<Message>>() {
+                        @Override
+                        public ListCell<Message> call(ListView<Message> listView) {
+                            return new ListCell<Message>() {
+                                @Override
+                                protected void updateItem(Message item, boolean empty) {
+                                    super.updateItem(item, empty);
+                                    
+                                    if (item == null || empty) {
+                                        setText(null);
+                                    } else {
+                                        try {
+                                            UserService userService = new UserService();
+                                            User sender = userService.getByID(item.getSenderId());
+                                            String senderName = sender.getNom();
+                                            String messageContent = item.getContent();
+                                            String text = senderName + ": " + messageContent;
+                                            setText(text);
+                                            setStyle("-fx-text-fill: green; -fx-font-weight: bold;");
+                                        } catch (SQLException ex) {
+                                            Logger.getLogger(ChatController.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                    }
+                                }
+                                
+                            };
+                        }
+                    });
+                } catch (SQLException ex) {
+                    Logger.getLogger(ChatController.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
-        
-   
+
     }
 
     @FXML
@@ -212,27 +264,32 @@ public class ChatController implements Initializable {
     }
 
     @FXML
-private void userFind(ActionEvent event) throws SQLException {
-    String email = fxrecherche.getText(); // userEmail est l'objet TextField qui contient l'email entré par l'utilisateur
-    User user = userService.getUserByEmai(email);
-    if (user != null) {
-        ObservableList<User> userList = FXCollections.observableArrayList();
-        userList.add(user);
-        fxlisteusert.setItems(userList);
-        fxlisteusert.setCellFactory(param -> new ListCell<User>() {
-            @Override
-            protected void updateItem(User user, boolean empty) {
-                super.updateItem(user, empty);
-                if (empty || user == null) {
-                    setText(null);
-                } else {
-                    setText(user.getNom()); // Afficher seulement le nom de l'utilisateur dans la liste
+    private void userFind(ActionEvent event) throws SQLException {
+        String email = fxrecherche.getText(); // userEmail est l'objet TextField qui contient l'email entré par l'utilisateur
+        User user = userService.getUserByEmai(email);
+        if (user != null) {
+            ObservableList<User> userList = FXCollections.observableArrayList();
+            userList.add(user);
+            fxlisteusert.setItems(userList);
+            fxlisteusert.setCellFactory(param -> new ListCell<User>() {
+                @Override
+                protected void updateItem(User user, boolean empty) {
+                    super.updateItem(user, empty);
+                    if (empty || user == null) {
+                        setText(null);
+                    } else {
+                        setText(user.getNom()); // Afficher seulement le nom de l'utilisateur dans la liste
+                        if (user.isStatus()) {
+                            setTextFill(Color.GREEN); // Si le status est vrai, afficher en vert
+                        } else {
+                            setTextFill(Color.RED); // Si le status est faux, afficher en rouge
+                        }
+                    }
                 }
-            }
-        });
-    } else {
-        // Si aucun utilisateur n'est trouvé, effacer la liste des utilisateurs
-        fxlisteusert.setItems(null);
+            });
+        } else {
+            // Si aucun utilisateur n'est trouvé, effacer la liste des utilisateurs
+            fxlisteusert.setItems(null);
+        }
     }
-}
 }
