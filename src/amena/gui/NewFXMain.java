@@ -33,7 +33,7 @@ public class NewFXMain extends Application {
     public void start(Stage primaryStage) throws Exception{
         
         
-       Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+       Parent root = FXMLLoader.load(getClass().getResource("TransorteurVi.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
        

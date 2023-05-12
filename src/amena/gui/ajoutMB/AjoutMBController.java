@@ -8,7 +8,10 @@ package amena.gui.ajoutMB;
 import amena.model.Vehicule;
 import amena.services.VehiculeCRUD;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,20 +36,20 @@ public class AjoutMBController implements Initializable {
     @FXML
     private AnchorPane paneA3;
     @FXML
-    private Button buttonback;
-    @FXML
     private TextField tfmat;
     @FXML
     private TextField tfmar;
     @FXML
     private TextField tfprx;
-    @FXML
-    private ColorPicker tfclr;
 String urlImg ; 
     @FXML
     private ImageView imgv;
     @FXML
     private TextField tfmod;
+    @FXML
+    private TextField lpec;
+    @FXML
+    private Button btnpic;
     /**
      * Initializes the controller class.
      */
@@ -55,15 +58,37 @@ String urlImg ;
         // TODO
     }    
 
-    @FXML
+     @FXML
     private void ajoutpic(ActionEvent event) {
-         FileChooser fileChooser = new FileChooser();
-        File selectedfile = fileChooser.showOpenDialog(null);
-        if (selectedfile != null) {
-           urlImg = selectedfile.toURI().toString() ; 
-            Image image = new Image(urlImg) ; 
+          FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Choisir une image");
+    fileChooser.getExtensionFilters().addAll(
+        new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif")
+    );
+    File selectedFile = fileChooser.showOpenDialog(btnpic.getScene().getWindow());
+    if (selectedFile != null) {
+        try {
+            Image image = new Image(selectedFile.toURI().toString());
             imgv.setImage(image);
-    }}
+
+            String fileName = selectedFile.getName();
+            File destinationFile = new File("C:/xampp/htdocs/img/" + fileName.trim());
+
+            // Copier le fichier sélectionné vers le dossier de destination
+            Files.copy(selectedFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+            // Mettre à jour l'URL de l'image dans l'objet utilisateur
+            urlImg = "http://localhost/img/" + fileName.trim();
+            //userService.modifier(u1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Erreur lors de la lecture de l'image.");
+            alert.showAndWait();
+        }
+    }
+    }
+
   public boolean verif_Num(String num)
     {
         int i=0; 
@@ -153,13 +178,10 @@ String urlImg ;
     }
     @FXML
     private void ajouterBc(ActionEvent event) {
-         Color color = tfclr.getValue();
-            String colorCode = String.format("#%02X%02X%02X", (int) (color.getRed() * 255),
-                    (int) (color.getGreen() * 255), (int) (color.getBlue() * 255));
-        if(test(tfmat.getText(),tfmar.getText(),tfprx.getText()))
+        if(lpec.getText().length()!=0 && test(tfmat.getText(),tfmar.getText(),tfprx.getText()))
         {
     
-     Vehicule v = new Vehicule("Moto",tfmat.getText(),false,"0",0,tfmar.getText(),tfmod.getText(),colorCode,Float.parseFloat(tfprx.getText()),urlImg) ;         
+     Vehicule v = new Vehicule("Moto",tfmat.getText(),false,"0",0,tfmar.getText(),tfmod.getText(),lpec.getText(),Float.parseFloat(tfprx.getText()),urlImg) ;         
         VehiculeCRUD vc = new VehiculeCRUD() ;
         vc.ajouter(v);
          Alert alert = new Alert(Alert.AlertType.INFORMATION);

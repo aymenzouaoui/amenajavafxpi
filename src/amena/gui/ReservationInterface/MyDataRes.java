@@ -17,22 +17,19 @@ import javafx.scene.image.Image;
     public class MyDataRes {
         private  String date_deb;
         private  String date_fin;
-        private  Image image ;
+        private  String etat ;
         private int idtrans,id,idVeh ; 
     
-        public Image getImage() {
-        return image;
-    }
+     
         
 
-        public MyDataRes(int id,String date_deb, String date_fin, Image image,int idtrans,int idVeh ) {
+        public MyDataRes(int id,String date_deb, String date_fin, String etat,int idtrans,int idVeh ) {
             this.id=id ; 
             this.date_deb = date_deb;
-             this.date_fin = date_fin;
-            this.image = image;
+            this.date_fin = date_fin;
+            this.etat = etat;
             this.idtrans = idtrans;
-                        this.idVeh=idVeh ; 
-
+            this.idVeh=idVeh ; 
         }
 
     public int getIdVeh() {
@@ -47,9 +44,15 @@ import javafx.scene.image.Image;
         this.date_fin = date_fin;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
+    public String getEtat() {
+        return etat;
     }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+   
 
     public void setIdtrans(int idtrans) {
         this.idtrans = idtrans;

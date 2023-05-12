@@ -46,11 +46,12 @@ public class DashboardController implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
+        
          try {
              UserService u = new UserService();
              User a =u.getUserByEmai(semail);
-                     System.out.println(a);
-
+             
              
              Image img = new Image(a.getImage(),false) ;
              circle2.setFill(new ImagePattern(img));
@@ -103,12 +104,10 @@ public class DashboardController implements Initializable {
                  translateTransition1.play();
              });
          } catch (SQLException ex) {
-             Logger.getLogger(amena.gui.DashboardTransporteur.DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
          }
         
-        
-        
-        
+ 
         
     }
     
@@ -198,6 +197,19 @@ stage.close();
         } catch (IOException ex) {
              Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
          }
+    }
+
+    @FXML
+    private void transbtn(ActionEvent event) {
+          try
+        {
+            Parent sv ;
+            sv = (AnchorPane)FXMLLoader.load(getClass().getResource("/amena/gui/TransorteurVi.fxml"));
+          pane4.getChildren().removeAll() ; 
+          pane4.getChildren().setAll(sv) ;                              
+        } catch (IOException ex) {
+             Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+         }  
     }
     }
     

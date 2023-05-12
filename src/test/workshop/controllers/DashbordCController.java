@@ -141,17 +141,15 @@ public class DashbordCController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
             
             ColisCRUD c = new ColisCRUD() ; 
-        /*    
+         
                     
             if (result.get() == ButtonType.OK){
                 c.supprimer(selectedDoc.getId());
                 lsview.getItems().remove(selectedDoc);
-            showAlert("Colis supprimé");}
-        } else {
-            showAlert("Veuillez sélectionner un colis à supprimer");
-        }*/
+          //  Alert("Colis supprimé");}
+       
     }
-    }
-    }
+    }}}
+    
     
 

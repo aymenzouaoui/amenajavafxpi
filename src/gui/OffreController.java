@@ -90,12 +90,12 @@ public class OffreController implements Initializable {
         // Image image=new Image("amanalogo.png");
 
         Notifications notifications = Notifications.create();
-        notifications.graphic(new ImageView(image));
-        notifications.text("hey im nour");
-       notifications.title("Success Message");
-        notifications.hideAfter(Duration.seconds(4));
+       // notifications.graphic(new ImageView(image));
+        notifications.text("votre colis a ete accepté");
+        notifications.title("Success Message");
+      //  notifications.hideAfter(Duration.seconds(4));
 //offre 
-      //  notifications.show();
+        notifications.show();
       
       ColisReserverCrud u2 = new ColisReserverCrud();
       ColisReserver r= new ColisReserver();

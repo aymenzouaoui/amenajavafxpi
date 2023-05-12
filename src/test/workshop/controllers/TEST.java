@@ -1,4 +1,10 @@
 package test.workshop.controllers;
+import static amena.gui.ProfilController.semail;
+import amena.model.User;
+import amena.services.UserService;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Bounds;
@@ -67,8 +73,12 @@ public class TEST extends Application {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                update();
-                draw();
+                try {
+                    update();
+                    draw();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TEST.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         };
         timer.start();
@@ -78,7 +88,7 @@ public class TEST extends Application {
         primaryStage.show();
     }
 
-    private void update() {
+    private void update() throws SQLException {
         if (gameover) {
             return;
         }
@@ -97,12 +107,22 @@ public class TEST extends Application {
         if (cactusX < -CACTUS_SIZE) {
             cactusX = CANVAS_WIDTH;
             score++;
+            UserService u = new UserService();
+    User p =u.getUserByEmai("aymenzouaoui97@gmail.com");
+  String ss=p.getScore();
+ int j=Integer.parseInt(ss);
+ j=j+score;
+  p.setScore(Integer.toString(j));
+  u.modifier(p);
+  
         }
 
         // Check for collision
 if (cactusX < 100 && cactusX + CACTUS_SIZE > 100 &&
         dinoY + DINO_SIZE > GROUND_Y - CACTUS_SIZE) {
     gameover = true;
+    
+    
 }
     }
 

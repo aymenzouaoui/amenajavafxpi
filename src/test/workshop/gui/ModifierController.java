@@ -160,8 +160,8 @@ public class ModifierController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText("Colis modifié avec succès !");
         alert.showAndWait();
-        Stage stage = (Stage) btnMod.getScene().getWindow();
-        stage.close();
+       
+
 
     }
 

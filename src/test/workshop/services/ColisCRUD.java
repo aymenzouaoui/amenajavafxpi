@@ -62,21 +62,6 @@ public class ColisCRUD implements InterfaceCRUD<Colis> {
             if (affectedRows == 0) {
                 throw new SQLException("Insertion du colis a échoué, aucune ligne affectée.");
             }
-
-            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    int colisId = generatedKeys.getInt(1);
-
-                    PreparedStatement stmtDoc = conn.prepareStatement("INSERT INTO documentexpedition (colis_id, dateSignature, statut) VALUES (?,?,?)");
-                    stmtDoc.setInt(1, colisId);
-                    stmtDoc.setDate(2, new java.sql.Date(System.currentTimeMillis()));
-                    stmtDoc.setString(3, "Non signé");
-                    stmtDoc.executeUpdate();
-                    System.out.println("Le document d'expédition a été créé pour le colis avec l'ID " + colisId);
-                } else {
-                    throw new SQLException("Insertion du colis a échoué, aucun ID généré.");
-                }
-            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -90,10 +75,10 @@ public class ColisCRUD implements InterfaceCRUD<Colis> {
     @Override
     public void supprimer(int id) {
         try {
-            PreparedStatement statement1 = conn.prepareStatement("DELETE FROM documentexpedition WHERE colis_id = ?");
+            PreparedStatement statement1 = conn.prepareStatement("DELETE FROM documentexpedition WHERE id = ?");
             statement1.setInt(1, id);
             statement1.executeUpdate();
-            String sql = "DELETE FROM colis WHERE id_colis = ?";
+            String sql = "DELETE FROM colis WHERE id = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
@@ -106,7 +91,7 @@ public class ColisCRUD implements InterfaceCRUD<Colis> {
     @Override
     public void modifier(Colis colis) {
         try {
-            String sql = "UPDATE colis SET nomExpediteur = ?, adresseExpediteur = ?, nomDestinataire = ?, adresseDestinataire = ?, poids = ?, statut = ?, dateExpedition = ? WHERE id_colis = ?";
+            String sql = "UPDATE colis SET nomExpediteur = ?, adresseExpediteur = ?, nomDestinataire = ?, adresseDestinataire = ?, poids = ?, statut = ?, dateExpedition = ? WHERE id = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, colis.getNomExpediteur());
             preparedStatement.setString(2, colis.getAdresseExpediteur());
@@ -140,7 +125,7 @@ public class ColisCRUD implements InterfaceCRUD<Colis> {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Colis colis = new Colis(
-                        resultSet.getInt("id_Colis"),
+                        resultSet.getInt("id"),
                         resultSet.getString("nomExpediteur"),
                         resultSet.getString("adresseExpediteur"),
                         resultSet.getString("nomDestinataire"),
@@ -167,7 +152,7 @@ public List<Colis>listColisN() {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Colis colis = new Colis(
-                        resultSet.getInt("id_Colis"),
+                        resultSet.getInt("id"),
                         resultSet.getString("nomExpediteur"),
                         resultSet.getString("adresseExpediteur"),
                         resultSet.getString("nomDestinataire"),
@@ -196,7 +181,7 @@ public List<Colis>listColisN() {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Colis colis = new Colis(
-                        resultSet.getInt("id_Colis"),
+                        resultSet.getInt("id"),
                         resultSet.getString("nomExpediteur"),
                         resultSet.getString("adresseExpediteur"),
                         resultSet.getString("nomDestinataire"),
@@ -226,13 +211,13 @@ public List<Colis>listColisN() {
     @Override
     public Colis getByID(int id) {
         Colis colis = null;
-        String query = "SELECT * FROM colis WHERE id_Colis = ?";
+        String query = "SELECT * FROM colis WHERE id = ?";
         try (PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 colis = new Colis(
-                        resultSet.getInt("id_Colis"),
+                        resultSet.getInt("id"),
                         resultSet.getString("nomExpediteur"),
                         resultSet.getString("adresseExpediteur"),
                         resultSet.getString("nomDestinataire"),
@@ -256,7 +241,7 @@ public List<Colis>listColisN() {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 colis = new Colis(
-                        resultSet.getInt("id_Colis"),
+                        resultSet.getInt("id"),
                         resultSet.getString("nomExpediteur"),
                         resultSet.getString("adresseExpediteur"),
                         resultSet.getString("nomDestinataire"),
@@ -303,7 +288,7 @@ public List<Colis>listColisN() {
             ResultSet result = stmt.executeQuery();
             while (result.next()) {
                 Colis c = new Colis();
-                c.setId(result.getInt("id_Colis"));
+                c.setId(result.getInt("id"));
                 c.setNomExpediteur(result.getString("nomExpediteur"));
                 c.setAdresseExpediteur(result.getString("adresseExpediteur"));
                 c.setNomDestinataire(result.getString("nomDestinataire"));
@@ -502,7 +487,7 @@ return result;
             try (ResultSet resultSet = ps.executeQuery()) {
                 while (resultSet.next()) {
                     Colis colis = new Colis(
-                            resultSet.getInt("id_Colis"),
+                            resultSet.getInt("id"),
                             resultSet.getString("nomexpediteur"),
                             resultSet.getString("adresseexpediteur"),
                             resultSet.getString("nomdestinataire"),
@@ -525,7 +510,7 @@ return result;
         try {/*
             UserService u = new UserService();
             User a = u.getUserByEmai("mohamed1@gmail.com");*/
-            String sql = "UPDATE colis SET nomExpediteur = ?, adresseExpediteur = ?, nomDestinataire = ?, adresseDestinataire = ?, poids = ?, statut = ?, dateExpedition = ? WHERE id_colis = ? ";
+            String sql = "UPDATE colis SET nomExpediteur = ?, adresseExpediteur = ?, nomDestinataire = ?, adresseDestinataire = ?, poids = ?, statut = ?, dateExpedition = ? WHERE id = ? ";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, colis.getNomExpediteur());
             preparedStatement.setString(2, colis.getAdresseExpediteur());
@@ -551,11 +536,11 @@ return result;
         try {
             UserService u = new UserService();
             User a = u.getUserByEmai(semail);
-            PreparedStatement statement = conn.prepareStatement("SELECT * FROM colis JOIN colisr ON colis.id_colis = colisr.id_c WHERE colisr.id_u='" + a.getId() + "'");
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM colis JOIN colis_rec ON colis.id = colis_rec.id_c_id WHERE colis_rec.id_u_id='" + a.getId() + "'");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Colis colis = new Colis(
-                        resultSet.getInt("id_Colis"),
+                        resultSet.getInt("id"),
                         resultSet.getString("nomExpediteur"),
                         resultSet.getString("adresseExpediteur"),
                         resultSet.getString("nomDestinataire"),

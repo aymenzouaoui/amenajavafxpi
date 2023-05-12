@@ -62,8 +62,7 @@ public class AjoutDController implements Initializable {
     private ChoiceBox<String> cbVilleDep;
     @FXML
     private ChoiceBox<String> cbVilleArr;
-    @FXML
-    private ChoiceBox<String> cbType;
+ 
 
     private UserService userservice;
 
@@ -103,12 +102,7 @@ public class AjoutDController implements Initializable {
         );
         cbVilleDep.setItems(villes);
         cbVilleArr.setItems(villes);
-        ObservableList<String> types = FXCollections.observableArrayList(
-                "Demande",
-                "Offre"
-        );
-        cbType.setItems(types);
-
+       
     }
 
     @FXML
@@ -122,7 +116,7 @@ public class AjoutDController implements Initializable {
             alert.setContentText("Le format de la date doit être jj-mm-aaaa!");
             alert.showAndWait();
         } else {
-            if (tfPrix.getText().isEmpty() || cbVilleDep.getValue() == null || cbVilleArr.getValue() == null || cbType.getValue() == null
+            if (tfPrix.getText().isEmpty() || cbVilleDep.getValue() == null || cbVilleArr.getValue() == null 
                     || tfDate_D.getText().isEmpty() || tfDate_A.getText().isEmpty() || tfDesc.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur");
@@ -143,11 +137,17 @@ public class AjoutDController implements Initializable {
                 A.setDate_dep(tfDate_D.getText());
                 A.setDate_arr(tfDate_A.getText());
                 A.setDescription(tfDesc.getText());
-                A.setType(cbType.getValue());
+                
                 A.setUser(b);
+                if (b.getRole().equals("[\"ROLE_TRANSPORTEUR\"]")) {
+                    A.setType("Offre");}
+                if (b.getRole().equals("[\"ROLE_USER\"]")) {
+                    A.setType("Demande");}
+                
                 System.out.println(b);
                 AnnonceCRUD AK = new AnnonceCRUD();
-                if (b.getRole().equals("Transporteur")) {
+                if (b.getRole().equals("[\"ROLE_TRANSPORTEUR\"]")) {
+                   
                     AK.ajouter2(A);
                     Parent sv;
                     sv = (AnchorPane) FXMLLoader.load(getClass().getResource("AfficherTransporteurAnnonce.fxml"));

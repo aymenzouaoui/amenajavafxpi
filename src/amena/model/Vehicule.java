@@ -30,13 +30,13 @@ public class Vehicule {
         return modele;
     }
     private String kilometrage ;
-    private String couleur ; 
+    private String lpec ; 
     private float prix ; 
 private String img ; 
      public Vehicule()
      {}
     
-    public Vehicule(int id,String type,String immat, boolean etat,String kilometrage, int chevaux, String marque,String modele, String couleur, float prix,String img) {
+    public Vehicule(int id,String type,String immat, boolean etat,String kilometrage, int chevaux, String marque,String modele, String lpec, float prix,String img) {
         this.modele = modele ; 
         this.id = id ; 
         this.type = type ; 
@@ -45,11 +45,11 @@ private String img ;
         this.chevaux = chevaux;
         this.marque = marque;
         this.kilometrage = kilometrage;
-        this.couleur = couleur;
+        this.lpec = lpec;
         this.prix = prix;
         this.img = img ;
     }
-    public Vehicule(String type,String immat, boolean etat,String kilometrage,int chevaux, String marque,String modele, String couleur, float prix,String img) {
+    public Vehicule(String type,String immat, boolean etat,String kilometrage,int chevaux, String marque,String modele, String lpec, float prix,String img) {
         this.img  = img  ; 
         this.type = type ; 
         this.immat = immat;
@@ -57,7 +57,7 @@ private String img ;
         this.kilometrage = kilometrage;
         this.chevaux = chevaux;
         this.marque = marque;
-        this.couleur = couleur;
+        this.lpec = lpec;
         this.prix = prix;
                 this.modele = modele ; 
 
@@ -131,8 +131,8 @@ private String img ;
         return marque;
     }
 
-    public String getCouleur() {
-        return couleur;
+    public String getLpec() {
+        return lpec;
     }
 
     public float getPrix() {
@@ -159,8 +159,8 @@ private String img ;
         this.marque = marque;
     }
 
-    public void setCouleur(String couleur) {
-        this.couleur = couleur;
+    public void setLpec(String lpec) {
+        this.lpec = lpec;
     }
 
     public void setPrix(float prix) {
@@ -187,7 +187,7 @@ private String img ;
     
     @Override
     public String toString() {
-        return immat ;//+ nbrEspaceImmat(immat) + etat ; // + "   " + chevaux + "   " + marque + "   " + kilometrage + "   " + couleur + "   " + prix ;
+        return immat ;//+ nbrEspaceImmat(immat) + etat ; // + "   " + chevaux + "   " + marque + "   " + kilometrage + "   " + lpec + "   " + prix ;
     }
     
     

@@ -5,7 +5,9 @@
  */
 package amena.gui;
 
+
 import static amena.gui.Identifier_votre_compteController.emailS;
+import static amena.gui.ProfilController.semail;
 import amena.gui.ReservationInterface.DetResController;
 import amena.model.User;
 
@@ -45,20 +47,24 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import com.jfoenix.controls.JFXButton;
 import digidreamers.amena.gui.GestionGamificationController;
+import gui.AController;
+import static gui.AfficherClientAnnonceController.test;
 import javafx.scene.paint.ImagePattern;
-import test.workshop.controllers.TEST;
+import model.Annonce;
+import model.Evaluation;
+import services.AnnonceCRUD;
+import services.EvaluationCRUD;
+import org.controlsfx.control.Rating;
 
 /**
  * FXML Controller class
  *
  * @author aymen
  */
-public class ProfilController implements Initializable {
+public class ProfilTransporteurController implements Initializable {
 
     private ListView<User> userListView;
- 
-    public static String semail;
-    @FXML
+
     private AnchorPane PuserP;
     @FXML
     private Button chat;
@@ -76,18 +82,23 @@ public class ProfilController implements Initializable {
     private Button quitterBtn;
     @FXML
     private Circle c2;
-    private Label fxscore;
+    @FXML
+    private Button saveButton;
+    @FXML
+    Rating rating = new Rating();
     @FXML
     private Label score;
-    
+   
 
     public void setUserInformation(String email) throws SQLException, FileNotFoundException {
         semail = email;
         UserService u = new UserService();
+        // User p = u.getUserByEmai(email);
         User p = u.getUserByEmai(email);
+
         fxemail.setText(p.getEmail());
 
-        fxnom.setText(p.getNom() + "" + p.getPrenom());  // Récupérer l'utilisateur connecté
+        fxnom.setText(p.getNom() + "  " + p.getPrenom());  // Récupérer l'utilisateur connecté
         //fxprenom.setText(p.getPrenom());
         fxxadress.setText(p.getAdress());
         fxdate.setText(p.getDate_naissance().toString());
@@ -102,7 +113,7 @@ public class ProfilController implements Initializable {
         // fxemail.setText(p.getEmail());
     }
 
-    public ProfilController() throws SQLException {
+    public ProfilTransporteurController() throws SQLException {
 
     }
 
@@ -130,38 +141,40 @@ public class ProfilController implements Initializable {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    User p;
+    Annonce a;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         try {
-           
-            
+
             UserService u = new UserService();
-            User p = u.getUserByEmai(semail);
+
           
+            p = u.getByID(TransController.profiltrans);
+            System.out.println(p);
+
             fxemail.setText(p.getEmail());
             fxnom.setText(p.getNom() + "" + p.getPrenom());  // Récupérer l'utilisateur connecté
             //fxprenom.setText(p.getPrenom());
             fxxadress.setText(p.getAdress());
             fxdate.setText(p.getDate_naissance().toString());
-                score.setText(p.getScore());
             System.out.println("ds");
-            Image img1 = new Image(p.getImage(),false) ;
+            Image img1 = new Image(p.getImage(), false);
             img.setFill(new ImagePattern(img1));
-            
-            if(u.userVer(p.getId())){
-           Image imgcer = new Image("http://localhost/img/ver.png",false) ;
-            c2.setFill(new ImagePattern(imgcer));
+           // score.setText(p.getScore());
+
+            if (u.userVer(p.getId())) {
+                Image imgcer = new Image("http://localhost/img/ver.png", false);
+                c2.setFill(new ImagePattern(imgcer));
             }
-            
-            
-            
+
             System.out.println("ds");
         } catch (SQLException ex) {
             Logger.getLogger(ProfilController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
-        
+
     }
 
     @FXML
@@ -222,7 +235,6 @@ public class ProfilController implements Initializable {
         }
     }
 
-
     private void ajoutcomp(ActionEvent event) throws IOException {
         emailS = semail;
 
@@ -251,34 +263,30 @@ public class ProfilController implements Initializable {
     }
 
     @FXML
-    /*    private void mscore(MouseEvent event) {
-    
-    
-    try {
-    Parent sv;
-    sv = (AnchorPane) FXMLLoader.load(getClass().getResource("/gui/A.java"));
-    PuserP.getChildren().removeAll();
-    PuserP.getChildren().setAll(sv);
-    } catch (IOException ex) {
-    Logger.getLogger(GestionGamificationController.class.getName()).log(Level.SEVERE, null, ex);
+    private void handleSaveButtonAction(ActionEvent event) throws SQLException {
+        System.out.println(semail);
+
+        AnnonceCRUD AC = new AnnonceCRUD();
+        Annonce annonce = AC.getByIdbb(AController.test);
+        System.out.println(AController.test);
+
+        System.out.println(a);
+        double note = rating.getRating();
+        // Enregistrer l'évaluation dans la table d'évaluation des clients
+        EvaluationCRUD EV = new EvaluationCRUD();
+        Evaluation E = new Evaluation();
+
+        UserService userService = new UserService();
+        User user = userService.getUserByEmai(semail);
+        ////////////////////////////////////////////
+        System.out.println(user);
+
+        E.setIdClient(user.getId());
+        E.setIdTransporteur(a.getUser().getId());
+        EV.ajouterE(note, E);
+        // Mettre à jour le score du transporteur dans la table utilisateur
+        //calculerScoreTransporteur(idTransporteur);
+        // Enregistrer l'évaluation dans la base de données
+        // ...
     }
-    
-    }
-    */
-private void mscore(MouseEvent event) {
-    try {
-        // Créez une instance de la classe TEST
-        TEST test = new TEST();
-        
-        // Appelez la méthode start() de TEST pour afficher l'interface utilisateur
-        test.start(new Stage());
-    } catch (Exception ex) {
-        Logger.getLogger(GestionGamificationController.class.getName()).log(Level.SEVERE, null, ex);
-    }
-}
-
-
-
-
-    
 }

@@ -110,7 +110,7 @@ VehiculeCRUD vc ;
             User p = u.getByID(r.getIdTrans());
    System.out.println(p);
 
-            Image img = new Image(p.getImage(),false) ;
+           Image img = new Image(p.getImage(),false) ;
              circle.setFill(new ImagePattern(img));
              
             nom.setText(p.getNom());
@@ -175,7 +175,7 @@ VehiculeCRUD vc ;
 
     @FXML
     private void updateEtat(ActionEvent event) {
-        rc.modifier_etat(r,"Terminé");
+        rc.modifier_etat(r,"Terminée");
         vc.modifier_etat(r.getIdVeh());
          Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation");
@@ -199,6 +199,17 @@ VehiculeCRUD vc ;
         alert.setHeaderText(null);
         alert.setContentText("Le message a été envoyé avec succès ! SID : " + message.getSid());
         alert.showAndWait();
+    }
+
+    @FXML
+    private void confirmeretat(ActionEvent event) {
+         rc.modifier_etat(r,"Confirmée");
+        vc.modifier_etat(r.getIdVeh());
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText(null);
+            alert.setContentText("Etat modifié !");
+            alert.showAndWait();
     }
 
 }

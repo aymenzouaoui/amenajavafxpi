@@ -16,6 +16,8 @@ import amena.services.VehiculeCRUD;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,8 +56,6 @@ public class CamInterfaceController implements Initializable {
     @FXML
     private TextField tfprx;
     @FXML
-    private ColorPicker tfclr;
-    @FXML
     private ImageView imgv;
 
     private String urlImg; 
@@ -65,6 +65,10 @@ public class CamInterfaceController implements Initializable {
     private Button btnajcam;
     @FXML
     private TextField tfmod;
+    @FXML
+    private TextField lpec;
+    @FXML
+    private Button btnpic;
     /**
      * Initializes the controller class.
      */
@@ -164,15 +168,9 @@ public class CamInterfaceController implements Initializable {
     
     @FXML
     private void ajouterBC(ActionEvent event) {
-
-        
-             Color color = tfclr.getValue();
-            String colorCode = String.format("#%02X%02X%02X", (int) (color.getRed() * 255),
-                    (int) (color.getGreen() * 255), (int) (color.getBlue() * 255));
-        if(test(tfmat.getText(),tfmar.getText(),tfchv.getText(),tfprx.getText()))
+        if(lpec.getText().length()!=0 && test(tfmat.getText(),tfmar.getText(),tfchv.getText(),tfprx.getText()))
         {
-            System.out.println("i m here");
-     Vehicule v = new Vehicule("Camion",tfmat.getText(),false,"0",Integer.parseInt(tfchv.getText()),tfmar.getText(),tfmod.getText(),colorCode,Float.parseFloat(tfprx.getText()),urlImg) ;         
+     Vehicule v = new Vehicule("Camion",tfmat.getText(),false,"0",Integer.parseInt(tfchv.getText()),tfmar.getText(),tfmod.getText(),lpec.getText(),Float.parseFloat(tfprx.getText()),urlImg) ;         
         VehiculeCRUD vc = new VehiculeCRUD() ;
         vc.ajouter(v);
          Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -205,17 +203,36 @@ public class CamInterfaceController implements Initializable {
 
     
 
-    @FXML
+  @FXML
     private void ajoutpic(ActionEvent event) {
-         FileChooser fileChooser = new FileChooser();
-        File selectedfile = fileChooser.showOpenDialog(null);
-        if (selectedfile != null) {
-           urlImg = selectedfile.toURI().toString() ; 
-            Image image = new Image(urlImg) ; 
+          FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Choisir une image");
+    fileChooser.getExtensionFilters().addAll(
+        new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif")
+    );
+    File selectedFile = fileChooser.showOpenDialog(btnpic.getScene().getWindow());
+    if (selectedFile != null) {
+        try {
+            Image image = new Image(selectedFile.toURI().toString());
             imgv.setImage(image);
-        }
-  
 
+            String fileName = selectedFile.getName();
+            File destinationFile = new File("C:/xampp/htdocs/img/" + fileName.trim());
+
+            // Copier le fichier sélectionné vers le dossier de destination
+            Files.copy(selectedFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+            // Mettre à jour l'URL de l'image dans l'objet utilisateur
+            urlImg = "http://localhost/img/" + fileName.trim();
+            //userService.modifier(u1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Erreur lors de la lecture de l'image.");
+            alert.showAndWait();
+        }
     }
+    }
+
     
 }

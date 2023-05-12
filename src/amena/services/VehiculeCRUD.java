@@ -61,7 +61,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
     
     public void ajouter(Vehicule v) {
         try {
-            String req = "INSERT INTO `vehicule` (`type`, `immat`, `etat`, `kilometrage`, `chevaux`, `marque`, `modele`, `couleur`, `prix`,`img`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            String req = "INSERT INTO `vehicule` (`type`, `immat`, `etat`, `kilometrage`, `chevaux`, `marque`, `modele`, `lpec`, `prix`,`img`) VALUES (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(req);
             System.out.println(v.getModele());
             ps.setString(1, v.getType());
@@ -71,7 +71,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
             ps.setInt(5, v.getChevaux());
             ps.setString(6, v.getMarque());
             ps.setString(7, v.getModele());
-            ps.setString(8, v.getCouleur());
+            ps.setString(8, v.getLpec());
             ps.setFloat(9, v.getPrix());
             ps.setString(10, v.getImg());
 
@@ -93,7 +93,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
             inetat = 0;
         }
         try {
-            String req = "UPDATE `vehicule` SET `type` = '" + v.getType() + "', `immat` = '" + v.getImmat() + "', `etat` = '" + inetat + "', `kilometrage` = '" + v.getKilometrage() + "', `chevaux` = '" + v.getChevaux() + "', `marque` = '" + v.getMarque() + "', `modele` = '" + v.getModele() + "', `couleur` = '" + v.getCouleur() + "', `prix` = '" + v.getPrix() + "', `img` = '" + v.getImg() + "' WHERE idV = " + v.getId();
+            String req = "UPDATE `vehicule` SET `type` = '" + v.getType() + "', `immat` = '" + v.getImmat() + "', `etat` = '" + inetat + "', `kilometrage` = '" + v.getKilometrage() + "', `chevaux` = '" + v.getChevaux() + "', `marque` = '" + v.getMarque() + "', `modele` = '" + v.getModele() + "', `lpec` = '" + v.getLpec() + "', `prix` = '" + v.getPrix() + "', `img` = '" + v.getImg() + "' WHERE id = " + v.getId();
             Statement st = conn.createStatement();
             st.executeUpdate(req);
             System.out.println("vehicule updated !");
@@ -106,7 +106,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
     public void modifier_etat(int id) {
   
         try {
-            String req = "UPDATE `vehicule` SET `etat` = 0 WHERE idV = " + id;
+            String req = "UPDATE `vehicule` SET `etat` = 0 WHERE id = " + id;
             Statement st = conn.createStatement();
             st.executeUpdate(req);
             System.out.println("vehicule updated !");
@@ -119,7 +119,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
     @Override
     public void supprimer(int id) {
         try {
-            String req = "DELETE FROM `vehicule` WHERE idV = " + id;
+            String req = "DELETE FROM `vehicule` WHERE id = " + id;
             Statement st = conn.createStatement();
             st.executeUpdate(req);
             System.out.println("vehicule deleted !");
@@ -146,7 +146,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                     v.setChevaux(RS.getInt(6));
                     v.setMarque(RS.getString(7));
                     v.setModele(RS.getString(8));
-                    v.setCouleur(RS.getString(9));
+                    v.setLpec(RS.getString(9));
                     v.setPrix(RS.getFloat(10));
                     v.setImg(RS.getString(11));
                     list.add(v);
@@ -176,7 +176,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
                 v.setImg(RS.getString(11));
                 list.add(v);
@@ -229,7 +229,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
     public Vehicule getByID(int id) {
         Vehicule v = new Vehicule();
         try {
-            String req = "Select * from vehicule where idV = " + id;
+            String req = "Select * from vehicule where id = " + id;
             Statement st = conn.createStatement();
 
             ResultSet RS = st.executeQuery(req);
@@ -242,7 +242,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
                 v.setImg(RS.getString(11));
             }
@@ -271,7 +271,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
                        v.setImg(RS.getString(11));
 
@@ -301,7 +301,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
                 v.setImg(RS.getString(11));
 
@@ -332,7 +332,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
                 v.setImg(RS.getString(11));
 
@@ -362,7 +362,7 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
                 v.setImg(RS.getString(11));
                 list.add(v);
@@ -391,10 +391,9 @@ public class VehiculeCRUD implements InterfaceCRUD<Vehicule> {
                 v.setChevaux(RS.getInt(6));
                 v.setMarque(RS.getString(7));
                 v.setModele(RS.getString(8));
-                v.setCouleur(RS.getString(9));
+                v.setLpec(RS.getString(9));
                 v.setPrix(RS.getFloat(10));
-                                v.setImg(RS.getString(11));
-
+                v.setImg(RS.getString(11));
                 list.add(v);
             }
         } catch (SQLException ex) {

@@ -84,21 +84,15 @@ public class ListresController implements Initializable {
         ReservationCRUD rc = new ReservationCRUD();
         List<Reservation> lv2 = new ArrayList<>();
        try{
-        lv2.addAll(rc.afficher_cl());
+           System.out.println(rc.afficher_cl());
+           lv2.addAll(rc.afficher_cl());
        }catch(Exception e){System.out.println(e.getMessage());}
         List<MyDataRes> lmd = new ArrayList<>();
-        for (int i = 0; i < lv2.size(); i++) {
-            if ("En cours".equals(lv2.get(i).getEtat())) {
-                lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), new Image("http://localhost/img/time.png"), lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
-            } else {
-                lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), new Image("http://localhost/img/checked.png"), lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
-            }
-        }
-
+        for (int i = 0; i < lv2.size(); i++) 
+                lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), lv2.get(i).getEtat(), lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
         ObservableList<MyDataRes> data = FXCollections.observableArrayList(
                 lmd);
         lv.setItems(data);
-
         lv.setCellFactory(new Callback<ListView<MyDataRes>, ListCell<MyDataRes>>() {
             @Override
             public ListCell<MyDataRes> call(ListView<MyDataRes> listView) {
@@ -134,11 +128,11 @@ public class ListresController implements Initializable {
                     
                     Date df2;
                     df2 = DetResController.rstat.getDate_fin();
-                    LocalDate date2 = LocalDate.parse(DetResController.rstat.getDate_fin().toString());
+                    LocalDate date2 = LocalDate.parse(DetResController.rstat.getDate_deb().toString());
                     int year2 = date2.getYear();
                     int month2 = date2.getMonthValue();
                     int day2 = date2.getDayOfMonth();
-                    CountdownDays cd2 = new CountdownDays(year, month, day);
+                    CountdownDays cd2 = new CountdownDays(year2, month2, day2);
 
                    
 
@@ -200,6 +194,75 @@ public class ListresController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Reservation annulé avec succes");
             alert.showAndWait();
+            
+            
+              page = 0;
+        List<Reservation> lv2 = new ArrayList<>();
+       try{
+           System.out.println(rc.afficher_cl());
+           lv2.addAll(rc.afficher_cl());
+       }catch(Exception e){System.out.println(e.getMessage());}
+        List<MyDataRes> lmd = new ArrayList<>();
+        for (int i = 0; i < lv2.size(); i++) 
+          lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), lv2.get(i).getEtat(), lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
+        ObservableList<MyDataRes> data = FXCollections.observableArrayList(lmd);
+        lv.setItems(data);
+        lv.setCellFactory(new Callback<ListView<MyDataRes>, ListCell<MyDataRes>>() {
+            @Override
+            public ListCell<MyDataRes> call(ListView<MyDataRes> listView) {
+                return new reslistcell();
+            }
+        });
+
+        lv.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<MyDataRes>() {
+            @Override
+            public void changed(ObservableValue<? extends MyDataRes> observable, MyDataRes oldValue, MyDataRes newValue) {
+                MyDataRes rn;
+                rn = lv.getSelectionModel().getSelectedItem();
+
+                ReservationCRUD rc = new ReservationCRUD();
+
+                DetResController.rstat = rc.getByID(rn.getId());
+                if (DetResController.rstat != null) {
+                    deblab.setText(DetResController.rstat.getDate_deb().toString());
+                    finlab.setText(DetResController.rstat.getDate_fin().toString());
+                    montlab.setText(Float.toString(DetResController.rstat.getSomme()));
+                    etatlab.setText(DetResController.rstat.getEtat());
+                    Date df;
+                    df = DetResController.rstat.getDate_fin();
+                    LocalDate date = LocalDate.parse(DetResController.rstat.getDate_fin().toString());
+                    int year = date.getYear();
+                    int month = date.getMonthValue();
+                    int day = date.getDayOfMonth();
+                    CountdownDays cd = new CountdownDays(year, month, day);
+                    templab.setText(cd.updateCountdown());
+
+                   
+                    
+                    
+                    Date df2;
+                    df2 = DetResController.rstat.getDate_fin();
+                    LocalDate date2 = LocalDate.parse(DetResController.rstat.getDate_deb().toString());
+                    int year2 = date2.getYear();
+                    int month2 = date2.getMonthValue();
+                    int day2 = date2.getDayOfMonth();
+                    CountdownDays cd2 = new CountdownDays(year2, month2, day2);
+
+                   
+
+                    if (Integer.parseInt(cd2.updateCountdown()) < 3) {
+                        anulbtn.setDisable(true);
+                    } else {
+                        anulbtn.setDisable(false);
+                    }
+
+                }
+
+            }
+
+        });
+
+            
         }
 
     }

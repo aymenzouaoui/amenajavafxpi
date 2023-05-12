@@ -23,28 +23,45 @@ import amena.utils.MyConnectionn ;
 public class DocumentExpedition {
     private int id;
     private Date dateSignature;
-    private int id_colis;
+    private Colis id_colis;
     private String statut;
-    
-    public DocumentExpedition(int id, Date dateSignature, int id_colis, String statut) {
+    private String description;
+
+    public DocumentExpedition(int id, Date dateSignature, Colis id_colis, String statut, String text) {
         this.id = id;
         this.dateSignature = Date.valueOf(LocalDate.now());
         this.id_colis = id_colis;
-        this.statut = statut;
+        this.statut = "non signé";
+        this.description=text;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public DocumentExpedition(int id, Date dateSignature, Colis id_colis, String statut) {
+        this.id = id;
+        this.dateSignature = Date.valueOf(LocalDate.now());
+        this.id_colis = id_colis;
+        this.statut = "non signé";
     }
         public DocumentExpedition(int id, Date dateSignature,String statut) {
         this.id = id;
         this.dateSignature = Date.valueOf(LocalDate.now());
         this.statut = statut;
     }
-     public DocumentExpedition(int id,int id_colis, String statut) {
+     public DocumentExpedition(int id,Colis id_colis, String statut) {
         this.id = id;
         this.id_colis = id_colis;
-        this.statut = statut;
+        this.statut = "non signé";
     }
      public DocumentExpedition(int id,String statut) {
         this.id = id;
-        this.statut = statut;
+        this.statut = "non signé";
     }
     
     // Getters and setters
@@ -64,11 +81,11 @@ public class DocumentExpedition {
         this.dateSignature = dateSignature;
     }
 
-    public int getId_colis() {
+    public Colis getId_colis() {
         return id_colis;
     }
 
-    public void setId_colis(int id_colis) {
+    public void setId_colis(Colis id_colis) {
         this.id_colis = id_colis;
     }
 
@@ -88,7 +105,7 @@ public String toString() {
         return "Document d'expedition{" + "id=" + id + ", DateSignature=" +dateSignature+ ", Status=" +statut+ "Id_Colis="+id_colis+"}/n";
     }
 /*                 Trie Document  par critere souhaité            */
-
+/*
 public List<DocumentExpedition> trier(String critere) {
     Statement ste;
     Connection conn = MyConnectionn.getInstance().getConn();
@@ -109,6 +126,6 @@ public List<DocumentExpedition> trier(String critere) {
         ex.printStackTrace();
     }
     return documentsTrie;
-}
+}*/
 }
 

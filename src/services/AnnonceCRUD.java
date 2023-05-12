@@ -33,7 +33,7 @@ public class AnnonceCRUD implements InterfaceCRUD<Annonce> {
     // @Override
     public void ajouter(Annonce a) {
         try {
-            String req = "INSERT INTO annonces (type, ville_dep, ville_arr, date_dep, date_arr, prix, description, ida_U,idColis) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+            String req = "INSERT INTO annonces (type, ville_dep, ville_arr, date_dep, date_arr, prix, description, ida_U,id_colis_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
             PreparedStatement ps = conn.prepareStatement(req);
             ps.setString(1, a.getType());
             ps.setString(2, a.getVille_dep());
@@ -59,7 +59,7 @@ public class AnnonceCRUD implements InterfaceCRUD<Annonce> {
     
     public void ajouter2(Annonce a) {
         try {
-            String req = "INSERT INTO annonces (type, ville_dep, ville_arr, date_dep, date_arr, prix, description, ida_U,idColis) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+            String req = "INSERT INTO annonces (type, ville_dep, ville_arr, date_dep, date_arr, prix, description, ida_U,id_colis_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
             PreparedStatement ps = conn.prepareStatement(req);
             ps.setString(1, a.getType());
             ps.setString(2, a.getVille_dep());
@@ -85,7 +85,7 @@ public class AnnonceCRUD implements InterfaceCRUD<Annonce> {
 //  @Override
     public void modifier(Annonce a) {
         try {
-            String req = "UPDATE `annonces` SET `ville_dep` = '" + a.getVille_dep() + "',`ville_arr`='" + a.getVille_arr() + "',`date_dep`='" + a.getDate_dep() + "',`date_arr`='" + a.getDate_arr() + "',`prix`='" + a.getPrix() + "',`description`='" + a.getDescription() + "', `ida_U`='" + a.getUser().getId() + "','`idColis`='"+a.getColis().getId()+"' WHERE annonces.id_annonce = " + a.getId_annonce();
+            String req = "UPDATE annonces SET ville_dep = '" + a.getVille_dep() + "',`ville_arr`='" + a.getVille_arr() + "',`date_dep`='" + a.getDate_dep() + "',`date_arr`='" + a.getDate_arr() + "',`prix`='" + a.getPrix() + "',`description`='" + a.getDescription() + "', ida_U`='" + a.getUser().getId() + "','idColis`='"+a.getColis().getId()+"' WHERE annonces.id_annonce = " + a.getId_annonce();
 
             Statement st = conn.createStatement();
             st.executeUpdate(req);
@@ -99,7 +99,7 @@ public class AnnonceCRUD implements InterfaceCRUD<Annonce> {
     //  @Override
     public void supprimer(int id_annonce) {
         try {
-            String req = "DELETE FROM `annonces` WHERE id_annonce = " + id_annonce;
+            String req = "DELETE FROM annonces WHERE id_annonce = " + id_annonce;
             Statement st = conn.createStatement();
             st.executeUpdate(req);
             System.out.println("Annonce deleted !");
@@ -127,7 +127,7 @@ public class AnnonceCRUD implements InterfaceCRUD<Annonce> {
                 a.setPrix(RS.getInt("prix"));
                 a.setDescription(RS.getString("description"));
 Colis colis = new Colis();
-            colis.setId(RS.getInt("idColis"));
+            colis.setId(RS.getInt("id_colis_id"));
             a.setColis(colis);
                 list.add(a);
             }
@@ -157,7 +157,7 @@ Colis colis = new Colis();
                 a.setPrix(RS.getInt("prix"));
                 a.setDescription(RS.getString("description"));
                 ColisCRUD cr = new ColisCRUD();
-                a.setColis(cr.getByID(RS.getInt("idColis")));
+                a.setColis(cr.getByID(RS.getInt("id_colis_id")));
 
                 list.add(a);
             }
@@ -211,7 +211,7 @@ Colis colis = new Colis();
                 a.setPrix(RS.getInt("prix"));
                 a.setDescription(RS.getString("description"));
                 ColisCRUD cr = new ColisCRUD();
-                a.setColis(cr.getByID(RS.getInt("idColis")));
+                a.setColis(cr.getByID(RS.getInt("id_colis_id")));
                 list.add(a);
             }
         } catch (SQLException ex) {
@@ -238,7 +238,7 @@ Colis colis = new Colis();
                 a.setPrix(rs.getInt("prix"));
                 a.setDescription(rs.getString("description"));
                  ColisCRUD cr = new ColisCRUD();
-                a.setColis(cr.getByID(rs.getInt("idColis")));
+                a.setColis(cr.getByID(rs.getInt("id_colis_id")));
 
                 return a;
             } else {
@@ -272,7 +272,7 @@ Colis colis = new Colis();
             user.setId(rs.getInt("ida_U"));
             annonce.setUser(user);
             ColisCRUD cr = new ColisCRUD();
-                annonce.setColis(cr.getByID(rs.getInt("idColis")));
+                annonce.setColis(cr.getByID(rs.getInt("id_colis_id")));
         }
         rs.close();
         ps.close();

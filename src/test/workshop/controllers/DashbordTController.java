@@ -142,7 +142,27 @@ public class DashbordTController implements Initializable {
         alert.showAndWait();
     }
 }
+
+    @FXML
+    private void GenererDoc(ActionEvent event) {
+         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation de livraison");
+        alert.setHeaderText(null);
+        alert.setContentText("Vous êtes sûr de confirmer la livraison de ce colis ?");
+        Optional<ButtonType> result = alert.showAndWait();
+    if (result.get() == ButtonType.OK) {
+        try {
+            Parent sv;
+            sv = (AnchorPane) FXMLLoader.load(getClass().getResource("AjouteDocumentExpedition.fxml"));
+            paneA2.getChildren().removeAll();
+            paneA2.getChildren().setAll(sv);
+        } catch (IOException ex) {
+            Logger.getLogger(DashbordClientController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+}
+    }
+    
     
     
 

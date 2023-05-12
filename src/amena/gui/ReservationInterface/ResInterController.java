@@ -73,15 +73,10 @@ public class ResInterController implements Initializable {
             int month = date.getMonthValue();
             int day = date.getDayOfMonth();
             CountdownDays cd = new CountdownDays(year, month, day);
-            if (lv2.get(i).getEtat() == "En cours") {
-                lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), new Image("http://localhost/imageAmena/location/time.png"), lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
-            } else {
-                lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), new Image("http://localhost/imageAmena/location/checked.png"), lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
-            }
+             lmd.add(new MyDataRes(lv2.get(i).getIdRes(), lv2.get(i).getDate_deb().toString(), lv2.get(i).getDate_fin().toString(), lv2.get(i).getEtat() , lv2.get(i).getIdTrans(), lv2.get(i).getIdVeh()));
         }
 
-        ObservableList<MyDataRes> data = FXCollections.observableArrayList(
-                lmd);
+        ObservableList<MyDataRes> data = FXCollections.observableArrayList(lmd);
         lv.setItems(data);
 
         lv.setCellFactory(new Callback<ListView<MyDataRes>, ListCell<MyDataRes>>() {

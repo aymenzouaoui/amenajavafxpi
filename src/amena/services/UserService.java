@@ -238,7 +238,7 @@ public class UserService implements InterfaceCRUD<User> {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-
+        System.out.println("d");
         return list;
     }
 
@@ -401,23 +401,23 @@ public class UserService implements InterfaceCRUD<User> {
             ResultSet rs = statement.executeQuery();
             if (rs.next()) {
                 user = new User();
-                user.setId(rs.getInt("id"));
-                user.setNom(rs.getString("nom"));
-                user.setPrenom(rs.getString("prenom"));
-                user.setAdress(rs.getString("adress"));
-                user.setCin(rs.getString("cin"));
-                user.setDate_naissance(rs.getDate("date_naissance"));
-                user.setDate_creation_c(rs.getDate("date_creation_c"));
-                user.setStatus(rs.getInt("status") == 1);
-                user.setRole(rs.getString("role"));
-                user.setMot_pass(rs.getString("motPass"));
-                user.setEmail(rs.getString("email"));
-                user.setToken(rs.getString("Token"));
-                user.setScore(rs.getString("score"));
-                user.setNum(rs.getString("numtel"));
-                user.setImage(rs.getString("image"));
-                user.setCompteExpirationDate(rs.getDate("compte_ex"));
-                user.setTokenExpirationDate(rs.getDate("token_ex"));
+            user.setId(rs.getInt("id"));
+            user.setNom(rs.getString("nom"));
+            user.setPrenom(rs.getString("prenom"));
+            user.setAdress(rs.getString("adress"));
+            user.setCin(rs.getString("cin"));
+            user.setDate_naissance(rs.getDate("date_naissance"));
+            user.setDate_creation_c(rs.getDate("date_creation_c"));
+            user.setStatus(rs.getInt("status") == 1);
+            user.setRole(rs.getString("roles"));
+            user.setMot_pass(rs.getString("password"));
+            user.setEmail(rs.getString("email"));
+            user.setToken(rs.getString("token"));
+            user.setScore(rs.getString("score"));
+            user.setNum(rs.getString("numtel"));
+            user.setImage(rs.getString("image"));
+            user.setCompteExpirationDate(rs.getDate("compte_ex"));
+            user.setTokenExpirationDate(rs.getDate("token_ex"));
             }
         } catch (SQLException ex) {
             System.out.println("Failed to get user: " + ex.getMessage());
@@ -425,6 +425,7 @@ public class UserService implements InterfaceCRUD<User> {
         }
         return user;
     }
+
 
     private static String hashPassword(String password) throws NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");

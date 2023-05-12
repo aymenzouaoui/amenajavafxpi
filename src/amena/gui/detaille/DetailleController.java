@@ -58,13 +58,13 @@ public class DetailleController implements Initializable {
     @FXML
     private Label labprx;
     @FXML
-    private Pane pancol;
-    @FXML
     private ImageView imgv1;
     @FXML
     private AnchorPane pane1;
     @FXML
     private Label infosup;
+    @FXML
+    private Label lablpec;
 
     
    
@@ -80,7 +80,6 @@ v = vc.getByID(GestionLocationController.ids) ;
 labmat.setText(v.getImmat());
 labkilo.setText(v.getKilometrage());
 labmar.setText(v.getMarque()); 
-
 labmod.setText(v.getModele());
 labprx.setText(Float.toString(v.getPrix()));
 if(v.isEtat())
@@ -89,10 +88,11 @@ infosup.setText("Vous ne pouvez pas supprimer cet vehicule car elle est reservé
 supbtn.setDisable(true);
 }
 else
+            System.out.println(v.getImg());
     labe.setText("Disponible");
 labtp.setText(v.getType());
 imgv1.setImage(new Image(v.getImg()));
-pancol.setStyle("-fx-background-color: "+ v.getCouleur() +";" );
+lablpec.setText(v.getLpec());
  }    
 
     @FXML

@@ -15,6 +15,25 @@
 
 <AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.DashboardTransporteur.DashboardController">
    <children>
+      <AnchorPane prefHeight="22.0" prefWidth="842.0" style="-fx-background-color: #023c6b;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fx:id="menu" fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../../img/main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="exit" fitHeight="24.0" fitWidth="25.0" layoutX="803.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.200000000000003" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../../img/cross.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="322.0" layoutY="17.0" prefHeight="26.0" prefWidth="197.0" text="ESPACE TRANSPORTEUR" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="pane4" layoutY="59.0" prefHeight="572.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;">
          <children>
             <HBox layoutX="291.0" layoutY="57.0" prefHeight="156.0" prefWidth="259.0">
@@ -235,25 +254,6 @@
                   </Button>
                </children>
             </VBox>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="22.0" prefWidth="842.0" style="-fx-background-color: #023c6b;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <ImageView fx:id="menu" fitHeight="31.0" fitWidth="33.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0">
-               <image>
-                  <Image url="@../../img/main-menu.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="exit" fitHeight="24.0" fitWidth="25.0" layoutX="803.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.200000000000003" AnchorPane.topAnchor="15.0">
-               <image>
-                  <Image url="@../../img/cross.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="322.0" layoutY="17.0" prefHeight="26.0" prefWidth="197.0" text="ESPACE TRANSPORTEUR" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
    </children>

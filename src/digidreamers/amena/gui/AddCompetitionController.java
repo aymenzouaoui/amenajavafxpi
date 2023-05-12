@@ -5,15 +5,11 @@
  */
 package digidreamers.amena.gui;
 
-import static amena.gui.ProfilController.semail;
-import amena.model.User;
-import amena.services.UserService;
 import digideramers.amena.models.Competition;
 import digidreamers.amena.services.CompetitionCRUD;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -45,7 +41,6 @@ public class AddCompetitionController implements Initializable {
     private TextField tfDate_fin;
     @FXML
     private TextField tfType;
-    @FXML
     private TextField tfNbp;
     @FXML
     private AnchorPane pane2;
@@ -126,9 +121,8 @@ public class AddCompetitionController implements Initializable {
     }
 
     @FXML
-    private void saveCompetition(ActionEvent event) throws SQLException {
-        UserService u = new UserService();
-        User p = u.getUserByEmai(semail);
+    private void saveCompetition(ActionEvent event) {
+
         try {
             String title = tfTitle.getText();
             System.out.println(testTitle(title));
@@ -158,17 +152,16 @@ public class AddCompetitionController implements Initializable {
                     } else {
 
                         int type = Integer.parseInt(tfType.getText());
-                        if (!verif_Num2(tfNbp.getText())) {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
-                            alert.setTitle("Erreur");
-                            alert.setHeaderText(null);
-                            alert.setContentText("Le nombre de participants doit être un nombre");
-                            alert.showAndWait();
-                        } else {
+                       // if (!verif_Num2(tfNbp.getText())) {
+                        //    Alert alert = new Alert(Alert.AlertType.ERROR);
+                         //   alert.setTitle("Erreur");
+                         //   alert.setHeaderText(null);
+                         //   alert.setContentText("Le nombre de participants doit être un nombre");
+                         //   alert.showAndWait();
+                      //  } else {
 
-                            int nbp = Integer.parseInt(tfNbp.getText());
-                           // Competition c = new Competition(title, date_deb, date_fin, type, nbp, p.getId());
-                           Competition c = new Competition(title, date_deb, date_fin, type, nbp, p);
+                         //  int nbp = Integer.parseInt(tfNbp.getText());
+                            Competition c = new Competition(title, date_deb, date_fin, type, 0);
                             CompetitionCRUD cr = new CompetitionCRUD();
                             cr.ajouter(c);
 
@@ -176,7 +169,7 @@ public class AddCompetitionController implements Initializable {
                             Parent root = loader.load();
                             GestionGamificationController dcc = loader.getController();
                             tfTitle.getScene().setRoot(root);
-                        }
+                       // }
                     }
                 }
             }

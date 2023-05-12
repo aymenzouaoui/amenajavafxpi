@@ -31,7 +31,7 @@ import javafx.scene.layout.AnchorPane;
  public class reslistcell extends ListCell<MyDataRes> {
         private AnchorPane myAnchorPane;
         private ImageView imageView,dis;
-        private Label titleLabel;
+        private Label titleLabel,etatLab;
         private Label descriptionLabel;
 
         public reslistcell() {
@@ -41,8 +41,9 @@ import javafx.scene.layout.AnchorPane;
             titleLabel = new Label();
             descriptionLabel = new Label();
             dis = new ImageView();
+            etatLab = new Label();
 
-            myAnchorPane.getChildren().addAll(imageView, titleLabel, descriptionLabel,dis);
+            myAnchorPane.getChildren().addAll(imageView, titleLabel, descriptionLabel,etatLab);
 
             imageView.setFitHeight(50);
             imageView.setFitWidth(50);
@@ -57,8 +58,8 @@ import javafx.scene.layout.AnchorPane;
             AnchorPane.setLeftAnchor(descriptionLabel, 70.0);
             AnchorPane.setTopAnchor(descriptionLabel, 30.0);
             
-            AnchorPane.setRightAnchor(dis, 10.0);
-            AnchorPane.setTopAnchor(dis, 10.0);
+            AnchorPane.setRightAnchor(etatLab, 10.0);
+            AnchorPane.setTopAnchor(etatLab, 10.0);
         }
         
         @Override
@@ -72,9 +73,10 @@ import javafx.scene.layout.AnchorPane;
                 Vehicule v = vc.getByID(item.getIdVeh()) ;
                 
                 imageView.setImage(new Image(v.getImg()));
-                titleLabel.setText(item.getDate_deb());
-                descriptionLabel.setText(item.getDate_fin());
-                dis.setImage(item.getImage());
+                titleLabel.setText("Date debut : "+item.getDate_deb());
+                descriptionLabel.setText("Date fin : "+item.getDate_fin());
+                etatLab.setText(item.getEtat());
+              //  dis.setImage(item.getImage());
 
                 setGraphic(myAnchorPane);
             }

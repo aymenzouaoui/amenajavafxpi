@@ -247,7 +247,7 @@ public class AfficherClientAnnonceController implements Initializable {
 
     @FXML
     private void listeTransporteurBtn(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListTransporteur.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/amena/gui/TransorteurVi.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();

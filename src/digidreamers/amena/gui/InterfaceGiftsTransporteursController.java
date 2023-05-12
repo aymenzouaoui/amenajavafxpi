@@ -83,8 +83,8 @@ public class InterfaceGiftsTransporteursController implements Initializable {
     }
 
     @FXML
-    private void convertDiam(ActionEvent event) {
-     if(Integer.parseInt(g.getValue())<Integer.parseInt(p.getScore()))
+    private void convertDiam(ActionEvent event) throws SQLException {
+     if(Integer.parseInt(g.getValue())>Integer.parseInt(p.getScore()))
      {
           Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Erreur");
@@ -93,9 +93,12 @@ public class InterfaceGiftsTransporteursController implements Initializable {
                     alert.showAndWait();
      }
      else
-            if(Integer.parseInt(g.getValue())<Integer.parseInt(p.getScore()))
      {
-          Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         p.setScore(Integer.toString(Integer.parseInt(p.getScore())-Integer.parseInt(g.getValue())));
+          UserService  usr = new UserService();
+            usr.modifier(p);
+                    idScoreT.setText(p.getScore());
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Erreur");
                     alert.setHeaderText(null);
                     alert.setContentText("Felicitation !");

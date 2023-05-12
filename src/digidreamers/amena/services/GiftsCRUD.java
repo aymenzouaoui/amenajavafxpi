@@ -28,7 +28,7 @@ public class GiftsCRUD implements InterfaceCRUD<Gifts> {
     @Override
     public void ajouter(Gifts g) {
         try {
-            String req = "INSERT INTO `gifts` (`name`, `description`, `value`,`idC`, `photo`) VALUES (?,?,?,?,?)";
+            String req = "INSERT INTO `gifts` (`name`, `description`, `value`,`id_c_id`, `photo`) VALUES (?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(req);
 
             ps.setString(1, g.getName());
@@ -49,7 +49,7 @@ public class GiftsCRUD implements InterfaceCRUD<Gifts> {
     @Override
     public void modifier(Gifts g) {
         try {
-            String req = "UPDATE `gifts` SET `name` = '" + g.getName() + "', `description` = '" + g.getDescription() + "', `value` = '" + g.getValue() + "', `idC`= '" + g.getIdC() + "', `photo` = '" + g.getPhoto() + "' where id = " + g.getId();
+            String req = "UPDATE `gifts` SET `name` = '" + g.getName() + "', `description` = '" + g.getDescription() + "', `value` = '" + g.getValue() + "', `id_c_id`= '" + g.getIdC() + "', `photo` = '" + g.getPhoto() + "' where id = " + g.getId();
             Statement st = conn.createStatement();
             st.executeUpdate(req);
             System.out.println("gift updated !");
@@ -123,7 +123,7 @@ public class GiftsCRUD implements InterfaceCRUD<Gifts> {
         List<Gifts> list = new ArrayList<>();
 
         try {
-            String req = "Select * from gifts where idC=" + i;
+            String req = "Select * from gifts where id_c_id =" + i;
             Statement st = conn.createStatement();
 
             ResultSet RS = st.executeQuery(req);

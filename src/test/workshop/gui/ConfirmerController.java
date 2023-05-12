@@ -17,7 +17,7 @@ public class ConfirmerController {
     // Votre compte Twilio SID et Auth Token
 
     public static final String ACCOUNT_SID = "AC0643a8413f76b0e5bdd8ea93378281d0";
-    public static final String AUTH_TOKEN = "0d4ffaa40c2b31200a2a3411815af60d";
+    public static final String AUTH_TOKEN = "21f3f085635bc9ff5616fe43caba0f9e";
 
     
     @FXML

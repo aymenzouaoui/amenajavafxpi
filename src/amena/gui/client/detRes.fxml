@@ -32,7 +32,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="199.0" prefHeight="26.0" prefWidth="118.0" text="Couleur          :">
+            <Label layoutX="33.0" layoutY="199.0" prefHeight="26.0" prefWidth="227.0" text="Lieu de prise en charge          :">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -59,8 +59,8 @@
             </Label>
             <Label fx:id="labkilo" layoutX="146.0" layoutY="161.0" prefHeight="18.0" prefWidth="126.0" />
             <Label fx:id="labprx" layoutX="147.0" layoutY="242.0" prefHeight="28.0" prefWidth="148.0" />
-            <Pane fx:id="pancol" layoutX="152.0" layoutY="198.0" prefHeight="28.0" prefWidth="31.0" />
-            <ImageView fx:id="imgv1" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgv1" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="labPrise" layoutX="260.0" layoutY="203.0" prefHeight="18.0" prefWidth="200.0" />
          </children>
       </Pane>
       <Pane layoutX="545.0" layoutY="106.0" prefHeight="306.0" prefWidth="260.0" style="-fx-background-color: #d6d6d6; -fx-background-radius: 30;">

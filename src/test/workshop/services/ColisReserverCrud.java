@@ -29,7 +29,7 @@ Connection conn = MyConnectionn .getInstance().getConn();
 
     public void ajouter(ColisReserver r) {
         try {
-            PreparedStatement stmt = conn.prepareStatement ( "INSERT INTO `colisr`(id_c, id_u) VALUES  (?,?)");
+            PreparedStatement stmt = conn.prepareStatement ( "INSERT INTO `colis_rec`(id_c_id,id_u_id) VALUES  (?,?)");
             stmt.setInt(1, r.getColis().getId());
             stmt.setInt(2, r.getUser().getId());
             stmt.executeUpdate();
@@ -40,7 +40,7 @@ Connection conn = MyConnectionn .getInstance().getConn();
     }
 public void supprimer(int id)  {
     try {
-    PreparedStatement statement1 = conn.prepareStatement("DELETE FROM `colisr` WHERE id = ?");
+    PreparedStatement statement1 = conn.prepareStatement("DELETE FROM `colis_rec` WHERE id = ?");
     statement1.setInt(1, id);
     statement1.executeUpdate();
     String sql = "DELETE FROM colisr WHERE id= ?";

@@ -10,8 +10,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
 
-<AnchorPane fx:id="PuserP" prefHeight="571.0" prefWidth="842.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ProfilController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ProfilTransporteurController">
+   <Label fx:id="score" layoutX="751.0" layoutY="23.0" prefHeight="25.0" prefWidth="53.0" text="score">
+      <font>
+         <Font name="System Bold Italic" size="14.0" />
+      </font></Label>
    <Pane layoutX="118.0" layoutY="118.0" prefHeight="403.0" prefWidth="606.0" style="-fx-background-color: #d6d6d6; -fx-background-radius: 30;">
       <children>
          <Button fx:id="chat" layoutX="250.0" layoutY="330.0" mnemonicParsing="false" onAction="#chat" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #81baff; -fx-background-radius: 30;" text="Message" textFill="WHITE">
@@ -52,6 +57,9 @@
             </font>
          </Text>
          <Circle fx:id="c2" fill="TRANSPARENT" layoutX="376.0" layoutY="46.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+<Rating fx:id="rating" layoutX="391.0" layoutY="41.0" max="5" />
+<Button fx:id="saveButton" layoutX="459.0" layoutY="87.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="Evaluer" />
+
       </children>
    </Pane>
    <Circle fx:id="img" fill="#b2b2b2" layoutX="429.0" layoutY="90.0" radius="76.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
@@ -60,17 +68,12 @@
          <Font name="System Bold" size="12.0" />
       </font>
    </Button>
-   <Label fx:id="score" layoutX="761.0" layoutY="33.0" prefHeight="25.0" prefWidth="53.0" text="score">
-      <font>
-         <Font name="System Bold Italic" size="14.0" />
-      </font>
-   </Label>
-   <Text layoutX="714.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score">
+   <Text layoutX="704.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score">
       <font>
          <Font name="System Bold Italic" size="13.0" />
       </font>
    </Text>
-   <ImageView fitHeight="36.0" fitWidth="53.0" layoutX="669.0" layoutY="23.0" onMouseClicked="#mscore" pickOnBounds="true">
+   <ImageView fitHeight="36.0" fitWidth="53.0" layoutX="659.0" layoutY="13.0" pickOnBounds="true">
       <image>
          <Image url="@../../images/png-clipart-calculation-computer-icons-summation-mathematics-logo-number-removebg-preview.png" />
       </image>

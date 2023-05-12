@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -58,8 +60,6 @@ public class ModifierVController implements Initializable {
     @FXML
     private TextField prxf;
     @FXML
-    private ColorPicker clf;
-    @FXML
     private Button picf;
     @FXML
     private ImageView imgv;
@@ -79,6 +79,8 @@ public class ModifierVController implements Initializable {
     private TextField tfmar;
     @FXML
     private TextField tfmod;
+    @FXML
+    private TextField lpec;
 
     /**
      * Initializes the controller class.
@@ -102,7 +104,7 @@ public class ModifierVController implements Initializable {
         }
         else
         {
-                  tfmar.setVisible(false);
+            tfmar.setVisible(false);
             tfmod.setVisible(false);
         }
         matf.setText(v.getImmat());
@@ -111,7 +113,7 @@ public class ModifierVController implements Initializable {
         kmf.setText(v.getKilometrage());
         urlImg = v.getImg();
         imgv.setImage(new Image(urlImg));
-        clf.setValue(Color.valueOf(v.getCouleur()));
+        lpec.setText(v.getLpec());
         if (!v.isEtat()) {
             rbd.setSelected(true);
         } else {
@@ -271,12 +273,9 @@ public class ModifierVController implements Initializable {
     private void btnmod(ActionEvent event) {
 
         String mar,mod ; 
-        Color color = clf.getValue();
-        String colorCode = String.format("#%02X%02X%02X", (int) (color.getRed() * 255),
-                (int) (color.getGreen() * 255), (int) (color.getBlue() * 255));
         VehiculeCRUD vc = new VehiculeCRUD();
         Vehicule v = vc.getByID(GestionLocationController.ids);
-        if (test(v.getType(), matf.getText(), chvf.getText(), prxf.getText(), kmf.getText(), tfmar.getText(), tfmod.getText())) {
+        if (lpec.getText().length()!=0 && test(v.getType(), matf.getText(), chvf.getText(), prxf.getText(), kmf.getText(), tfmar.getText(), tfmod.getText())) {
             Vehicule v2;
             
             if("Voiture".equals(v.getType()))
@@ -291,9 +290,9 @@ public class ModifierVController implements Initializable {
             }
             
             if (ebr.isSelected()) {
-                v2 = new Vehicule(v.getId(), v.getType(), matf.getText(), true, kmf.getText(), Integer.parseInt(chvf.getText()), mar,mod, colorCode, Float.parseFloat(prxf.getText()), urlImg);
+                v2 = new Vehicule(v.getId(), v.getType(), matf.getText(), true, kmf.getText(), Integer.parseInt(chvf.getText()), mar,mod, lpec.getText(), Float.parseFloat(prxf.getText()), urlImg);
             } else {
-                v2 = new Vehicule(v.getId(), v.getType(), matf.getText(), false, kmf.getText(), Integer.parseInt(chvf.getText()), mar,mod, colorCode, Float.parseFloat(prxf.getText()), urlImg);
+                v2 = new Vehicule(v.getId(), v.getType(), matf.getText(), false, kmf.getText(), Integer.parseInt(chvf.getText()), mar,mod, lpec.getText(), Float.parseFloat(prxf.getText()), urlImg);
             }
 
             vc.modifier(v2);
@@ -320,16 +319,37 @@ public class ModifierVController implements Initializable {
 
     }
 
-    @FXML
-    private void btnpic(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        File selectedfile = fileChooser.showOpenDialog(null);
-        if (selectedfile != null) {
-            urlImg = selectedfile.toURI().toString();
-            Image image = new Image(urlImg);
+      @FXML
+    private void ajoutpic(ActionEvent event) {
+          FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Choisir une image");
+    fileChooser.getExtensionFilters().addAll(
+        new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg", "*.gif")
+    );
+    File selectedFile = fileChooser.showOpenDialog(picf.getScene().getWindow());
+    if (selectedFile != null) {
+        try {
+            Image image = new Image(selectedFile.toURI().toString());
             imgv.setImage(image);
+
+            String fileName = selectedFile.getName();
+            File destinationFile = new File("C:/xampp/htdocs/img/" + fileName.trim());
+
+            // Copier le fichier sélectionné vers le dossier de destination
+            Files.copy(selectedFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+            // Mettre à jour l'URL de l'image dans l'objet utilisateur
+            urlImg = "http://localhost/img/" + fileName.trim();
+            //userService.modifier(u1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Erreur lors de la lecture de l'image.");
+            alert.showAndWait();
         }
     }
+    }
+
 
     @FXML
     private void retbtn(ActionEvent event) {

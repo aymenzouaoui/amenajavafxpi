@@ -211,7 +211,7 @@ public class Colis {
             ResultSet result = stmt.executeQuery();
             while (result.next()) {
                 Colis c = new Colis();
-                c.setId(result.getInt("id_Colis"));
+                c.setId(result.getInt("id"));
                 c.setNomExpediteur(result.getString("nomExpediteur"));
                 c.setAdresseExpediteur(result.getString("adresseExpediteur"));
                 c.setNomDestinataire(result.getString("nomDestinataire"));

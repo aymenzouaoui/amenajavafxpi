@@ -37,7 +37,6 @@
       </ImageView>
       <ChoiceBox fx:id="cbVilleDep" layoutX="156.0" layoutY="215.0" prefHeight="26.0" prefWidth="175.0" />
       <ChoiceBox fx:id="cbVilleArr" layoutX="485.0" layoutY="215.0" prefHeight="26.0" prefWidth="175.0" />
-      <ChoiceBox fx:id="cbType" layoutX="485.0" layoutY="370.0" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="158.0" layoutY="181.0" text="Ville de depart :  ">
          <font>
             <Font size="20.0" />
@@ -60,11 +59,6 @@
          </font>
       </Label>
       <Label layoutX="485.0" layoutY="267.0" text="Date d'arrivée : ">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="487.0" layoutY="340.0" text="Type : ">
          <font>
             <Font size="20.0" />
          </font>

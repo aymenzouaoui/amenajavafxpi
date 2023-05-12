@@ -69,13 +69,15 @@ public class DashboardController implements Initializable {
              exit.setOnMouseClicked(event -> { System.exit(0);});
              pane1.setVisible(false);
              nomper.setText(a.getNom() + " " + a.getPrenom());
-             FadeTransition fadeTransition=new FadeTransition(Duration.seconds(0.5),pane1);
+ FadeTransition fadeTransition=new FadeTransition(Duration.seconds(0.5),pane1);
              fadeTransition.setFromValue(1);
              fadeTransition.setToValue(0);
              fadeTransition.play();
+             
              TranslateTransition translateTransition=new TranslateTransition(Duration.seconds(0.5),pane2);
              translateTransition.setByX(-600);
              translateTransition.play();
+             
              menu.setOnMouseClicked(event -> {
                  
                  
@@ -90,6 +92,7 @@ public class DashboardController implements Initializable {
                  translateTransition1.setByX(+600);
                  translateTransition1.play();
              });
+             
              pane1.setOnMouseClicked(event -> {
                  
                  
@@ -108,13 +111,11 @@ public class DashboardController implements Initializable {
                  translateTransition1.setByX(-600);
                  translateTransition1.play();
              });
-             
-             
-             
          } catch (SQLException ex) {
              Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
          }
         
+ 
         
         
     }

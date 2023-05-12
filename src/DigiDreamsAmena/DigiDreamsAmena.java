@@ -10,6 +10,7 @@ import digideramers.amena.models.Gifts;
 import digidreamers.amena.services.CompetitionCRUD;
 import digidreamers.amena.services.GiftsCRUD;
 import java.sql.Date;
+import test.workshop.services.ColisCRUD;
 
 /**
  *
@@ -64,6 +65,9 @@ public class DigiDreamsAmena {
         Competition c4= new Competition(10,"maroua",Date.valueOf("2023-05-8"),Date.valueOf("2023-05-10"),3, 250) ; 
 
        cr.modifier(c4);
+       ColisCRUD c = new ColisCRUD();
+       c.supprimer(120);
+           
         
         System.out.println(cr.afficher());
 

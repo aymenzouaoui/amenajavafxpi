@@ -32,22 +32,22 @@ public class ReservationCRUD implements InterfaceCRUD<Reservation> {
     public  List<Reservation> afficher_cl() throws SQLException {
         UserService u = new UserService();
         User p = u.getUserByEmai(semail);
-        
+        System.out.println(p);
        List<Reservation>list = new ArrayList<>();
         try {
-            String req = "Select * from reservation where idTrans = '"+p.getId() +"'";
+            String req = "Select * from reservation where id_trans_id = '"+p.getId() +"'";
             Statement st = conn.createStatement();
            
             ResultSet RS= st.executeQuery(req);
             while(RS.next()){
             Reservation r = new Reservation();
              r.setIdRes(RS.getInt(1));
-             r.setIdVeh(RS.getInt(2));
-             r.setIdTrans(RS.getInt(3));
-             r.setDate_deb(RS.getDate(4));
-             r.setDate_fin(RS.getDate(5));
-             r.setSomme(RS.getFloat(6));
-              r.setEtat(RS.getString(7));
+             r.setIdVeh(RS.getInt(6));
+             r.setIdTrans(RS.getInt(7));
+             r.setDate_deb(RS.getDate(2));
+             r.setDate_fin(RS.getDate(3));
+             r.setSomme(RS.getFloat(4));
+              r.setEtat(RS.getString(5));
 
              list.add(r);
             }
@@ -57,16 +57,46 @@ public class ReservationCRUD implements InterfaceCRUD<Reservation> {
         return list;
     }
     
+     public  List<Reservation> afficher_ByVeh(int veh) throws SQLException {
+        UserService u = new UserService();
+        User p = u.getUserByEmai(semail);
+        System.out.println(p);
+       List<Reservation>list = new ArrayList<>();
+        try {
+            String req = "Select * from reservation where idV = '" +veh +"'";
+            Statement st = conn.createStatement();
+           
+            ResultSet RS= st.executeQuery(req);
+            while(RS.next()){
+            Reservation r = new Reservation();
+             r.setIdRes(RS.getInt(1));
+             r.setIdVeh(RS.getInt(6));
+             r.setIdTrans(RS.getInt(7));
+             r.setDate_deb(RS.getDate(2));
+             r.setDate_fin(RS.getDate(3));
+             r.setSomme(RS.getFloat(4));
+              r.setEtat(RS.getString(5));
+
+             list.add(r);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return list;
+    }
+    
+    
+    
     public void ajouter(Reservation r) {
         try {
-            String req = "INSERT INTO `reservation` (`idVeh`, `idTrans`, `date_deb`, `date_fin`, `somme` , `etat`) VALUES (?,?,?,?,?,?)";
-            String req2 = "UPDATE `vehicule` SET `etat` = '1'  WHERE idV = " + r.getIdVeh();
+            String req = "INSERT INTO `reservation` (`idV`, `id_trans_id`, `date_deb`, `date_fin`, `somme` , `etat`) VALUES (?,?,?,?,?,?)";
+        //    String req2 = "UPDATE `vehicule` SET `etat` = '1'  WHERE id = " + r.getIdVeh();
             
-            PreparedStatement ps2=conn.prepareStatement(req2);
-             ps2.executeUpdate();
+          //  PreparedStatement ps2=conn.prepareStatement(req2);
+            // ps2.executeUpdate();
 
             PreparedStatement ps=conn.prepareStatement(req);
-             
+             System.out.println(r.getIdVeh());
             ps.setInt(1, r.getIdVeh());
             ps.setInt(2, r.getIdTrans());
             ps.setDate(3, r.getDate_deb());
@@ -86,7 +116,7 @@ public class ReservationCRUD implements InterfaceCRUD<Reservation> {
     
     public void modifier(Reservation r) {   
         try {
-            String req = "UPDATE `reservation` SET `idVeh` = '" + r.getIdVeh() + "', `Date_Deb` = '" + r.getDate_deb()+ "', `date_fin` = '" + r.getDate_fin() + "', `somme` = '" + r.getSomme()+"', `etat` = '" + r.getEtat()+ "' WHERE idRes = " + r.getIdRes();
+            String req = "UPDATE `reservation` SET `idV` = '" + r.getIdVeh() + "', `Date_Deb` = '" + r.getDate_deb()+ "', `date_fin` = '" + r.getDate_fin() + "', `somme` = '" + r.getSomme()+"', `etat` = '" + r.getEtat()+ "' WHERE idRes = " + r.getIdRes();
             Statement st = conn.createStatement();
             st.executeUpdate(req);
             System.out.println("Reservation updated !");
@@ -119,13 +149,13 @@ public class ReservationCRUD implements InterfaceCRUD<Reservation> {
             ResultSet RS= st.executeQuery(req);
             while(RS.next()){
             Reservation r = new Reservation();
-             r.setIdRes(RS.getInt(1));
-             r.setIdVeh(RS.getInt(2));
-             r.setIdTrans(RS.getInt(3));
-             r.setDate_deb(RS.getDate(4));
-             r.setDate_fin(RS.getDate(5));
-             r.setSomme(RS.getFloat(6));
-              r.setEtat(RS.getString(7));
+            r.setIdRes(RS.getInt(1));
+             r.setIdVeh(RS.getInt(6));
+             r.setIdTrans(RS.getInt(7));
+             r.setDate_deb(RS.getDate(2));
+             r.setDate_fin(RS.getDate(3));
+             r.setSomme(RS.getFloat(4));
+              r.setEtat(RS.getString(5));
 
              list.add(r);
             }
@@ -146,12 +176,12 @@ public class ReservationCRUD implements InterfaceCRUD<Reservation> {
         ResultSet RS= st.executeQuery(req);
         while(RS.next()){
              r.setIdRes(RS.getInt(1));
-             r.setIdVeh(RS.getInt(2));
-             r.setIdTrans(RS.getInt(3));
-             r.setDate_deb(RS.getDate(4));
-             r.setDate_fin(RS.getDate(5));
-             r.setSomme(RS.getFloat(6));
-              r.setEtat(RS.getString(7));
+             r.setIdVeh(RS.getInt(6));
+             r.setIdTrans(RS.getInt(7));
+             r.setDate_deb(RS.getDate(2));
+             r.setDate_fin(RS.getDate(3));
+             r.setSomme(RS.getFloat(4));
+              r.setEtat(RS.getString(5));
 
         }
         } catch (SQLException ex) {
@@ -172,12 +202,12 @@ public class ReservationCRUD implements InterfaceCRUD<Reservation> {
         while(RS.next()){
         Reservation r = new Reservation();
         r.setIdRes(RS.getInt(1));
-        r.setIdVeh(RS.getInt(2));
-        r.setIdTrans(RS.getInt(3));
-        r.setDate_deb(RS.getDate(4));
-        r.setDate_fin(RS.getDate(5));
-        r.setSomme(RS.getFloat(6));
-        r.setEtat(RS.getString(7));
+             r.setIdVeh(RS.getInt(6));
+             r.setIdTrans(RS.getInt(7));
+             r.setDate_deb(RS.getDate(2));
+             r.setDate_fin(RS.getDate(3));
+             r.setSomme(RS.getFloat(4));
+              r.setEtat(RS.getString(5));
         list.add(r);
         }
         } catch (SQLException ex) {

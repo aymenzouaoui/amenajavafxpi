@@ -10,22 +10,21 @@
 
 <AnchorPane id="AnchorPane" fx:id="pane2" prefHeight="537.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="digidreamers.amena.gui.AddCompetitionController">
    <children>
-      <Button fx:id="btnAjouter" layoutX="621.0" layoutY="454.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="31.0" prefWidth="100.0" style="-fx-background-radius: 30; -fx-background-color: #81baff;" text="+Ajouter" textFill="WHITE">
+      <Button fx:id="btnAjouter" layoutX="610.0" layoutY="363.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="31.0" prefWidth="100.0" style="-fx-background-radius: 30; -fx-background-color: #81baff;" text="+Ajouter" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Pane layoutX="104.0" layoutY="121.0" prefHeight="342.0" prefWidth="488.0">
+      <Pane layoutX="94.0" layoutY="132.0" prefHeight="273.0" prefWidth="488.0">
          <children>
-            <VBox layoutX="267.0" layoutY="38.0" prefHeight="225.0" prefWidth="193.0" spacing="33.0">
+            <VBox layoutX="237.0" layoutY="34.0" prefHeight="225.0" prefWidth="193.0" spacing="25.0">
                <children>
                   <TextField fx:id="tfTitle" prefHeight="25.0" prefWidth="181.0" />
                   <TextField fx:id="tfDate_deb" />
                   <TextField fx:id="tfDate_fin" />
                   <TextField fx:id="tfType" />
-                  <TextField fx:id="tfNbp" />
                </children>
             </VBox>
-            <VBox layoutX="61.0" layoutY="36.0" prefHeight="220.0" prefWidth="147.0" spacing="40.0">
+            <VBox layoutX="61.0" layoutY="36.0" prefHeight="220.0" prefWidth="147.0" spacing="30.0">
                <children>
                   <Label text="Titre" textFill="#030303">
                      <font>
@@ -47,16 +46,11 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="20.0" prefWidth="152.0" text="Nombre de participants" textFill="#070606">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
                </children>
             </VBox>
          </children>
       </Pane>
-      <Button fx:id="btnRetourner" layoutX="34.0" layoutY="22.0" mnemonicParsing="false" onAction="#retournerversComp" prefHeight="31.0" prefWidth="86.0" style="-fx-background-radius: 30; -fx-background-color: #023c6b;" text="Retour" textFill="WHITE">
+      <Button fx:id="btnRetourner" layoutX="41.0" layoutY="14.0" mnemonicParsing="false" onAction="#retournerversComp" prefHeight="31.0" prefWidth="86.0" style="-fx-background-radius: 30; -fx-background-color: #023c6b;" text="Retour" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
