@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="466.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="amena.gui.ProfilController">
+    <VBox layoutX="209.0" layoutY="64.0" prefHeight="344.0" prefWidth="245.0" spacing="10.0">
+        <TextField fx:id="fxnom" />
+        <TextField fx:id="fxprenom" prefHeight="25.0" prefWidth="584.0" />
+        <TextField fx:id="fxxadress" />
+      <DatePicker fx:id="fxdate" prefHeight="25.0" prefWidth="252.0" />
+        <TextField fx:id="fxcin" />
+        <TextField fx:id="fxemail" />
+      <PasswordField fx:id="fxpass" />
+       
+    </VBox>
+   <Button fx:id="chat" layoutX="81.0" layoutY="415.0" mnemonicParsing="false" onAction="#chat" prefHeight="25.0" prefWidth="120.0" text="chat" />
+     <Button fx:id="quitterBtn" layoutX="644.0" layoutY="427.0" onAction="#handleQuitterBtn" text="Quitter" />
+   <Button fx:id="btnsup" layoutX="548.0" layoutY="427.0" mnemonicParsing="false" onAction="#supprimer" text="suprimer" />
+   <Label layoutX="58.0" layoutY="72.0" text="Nom" />
+   <Label layoutX="50.0" layoutY="97.0" text="prenom" />
+   <Label layoutX="41.0" layoutY="139.0" text="adress" />
+   <Label layoutX="52.0" layoutY="248.0" text="email" />
+   <Label layoutX="50.0" layoutY="210.0" text="cin" />
+   <Label layoutX="40.0" layoutY="173.0" text="date de naaissance" />
+   <Label layoutX="46.0" layoutY="287.0" text="password" />
+   <Button fx:id="btnmodifier" layoutX="479.0" layoutY="427.0" mnemonicParsing="false" onAction="#modifierUtilisateur" text="modifier" />
+</AnchorPane>
