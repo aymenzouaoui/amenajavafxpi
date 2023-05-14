@@ -59,7 +59,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="btnback" layoutX="726.0" layoutY="24.0" mnemonicParsing="false" onAction="#back" prefHeight="29.0" prefWidth="85.0" style="-fx-background-color: #023c6b; -fx-background-radius: 30;" text="Retour" textFill="WHITE">
+      <Button fx:id="btnback" layoutX="726.0" layoutY="24.0" mnemonicParsing="false" onAction="#back" prefHeight="29.0" prefWidth="85.0" style="-fx-background-color: #023c6b; -fx-background-radius: 30;" text="Afficher profile" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>

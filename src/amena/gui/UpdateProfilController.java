@@ -87,23 +87,27 @@ public class UpdateProfilController implements Initializable {
     @FXML
     private JFXCheckBox fxtadmin;
 
+    public UpdateProfilController() {
+        try {
+            this.userService = new UserService();
+        } catch (SQLException ex) {
+            Logger.getLogger(UpdateProfilController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
             userService = new UserService();
             selectedListView.getItems().addAll(userService.afficher());
 
-            selectedListView.setCellFactory(new Callback<ListView<User>, ListCell<User>>() {
-                public ListCell<User> call(ListView<User> param) {
-                    return new ListCell<User>() {
-                        @Override
-                        protected void updateItem(User item, boolean empty) {
-                            super.updateItem(item, empty);
-                            if (item != null) {
-                                setText(item.getNom() + " " + item.getPrenom() + " (" + item.getCin() + ")");
-                            }
-                        }
-                    };
+            selectedListView.setCellFactory((ListView<User> param) -> new ListCell<User>() {
+                @Override
+                protected void updateItem(User item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (item != null) {
+                        setText(item.getNom() + " " + item.getPrenom() + " (" + item.getCin() + ")");
+                    }
                 }
             });
         } catch (SQLException ex) {
@@ -129,18 +133,24 @@ public class UpdateProfilController implements Initializable {
             img.setFill(new ImagePattern(img1));
 
             String role = user.getRole();
-            if (role.equals("[\"ROLE_TRANSPORTEUR\"]")) {
-                fxtransoorteur.setSelected(true);
-                fxclient.setSelected(false);
-                fxtadmin.setSelected(false);
-            } else if (role.equals("[\"ROLE_USER\"]")) {
-                fxtransoorteur.setSelected(false);
-                fxclient.setSelected(true);
-                fxtadmin.setSelected(false);
-            } else if (role.equals("[\"ROLE_ADMIN\"]")) {
-                fxtransoorteur.setSelected(false);
-                fxclient.setSelected(false);
-                fxtadmin.setSelected(true);
+            switch (role) {
+                case "[\"ROLE_TRANSPORTEUR\"]":
+                    fxtransoorteur.setSelected(true);
+                    fxclient.setSelected(false);
+                    fxtadmin.setSelected(false);
+                    break;
+                case "[\"ROLE_USER\"]":
+                    fxtransoorteur.setSelected(false);
+                    fxclient.setSelected(true);
+                    fxtadmin.setSelected(false);
+                    break;
+                case "[\"ROLE_ADMIN\"]":
+                    fxtransoorteur.setSelected(false);
+                    fxclient.setSelected(false);
+                    fxtadmin.setSelected(true);
+                    break;
+                default:
+                    break;
             }
             boolean etat = user.isStatus();
             System.out.println(etat);
@@ -242,7 +252,7 @@ public class UpdateProfilController implements Initializable {
                     etat = false;
                 }
 
-                User u1 = userService.getUserByEmai(user.getEmail());
+            User u1 = userService.getUserByEmai(user.getEmail());
                 u1.setId(user.getId());
                 u1.setEmail(email);
                 u1.setNom(nom);
@@ -279,7 +289,6 @@ public class UpdateProfilController implements Initializable {
                 Stage stage = (Stage) btnProfil.getScene().getWindow();
                 stage.setScene(scene);
             } catch (IOException e) {
-                e.printStackTrace();
             }
         });
 

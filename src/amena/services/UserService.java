@@ -147,7 +147,7 @@ public class UserService implements InterfaceCRUD<User> {
                     //+ "`date_naissance`='" + u.getDate_naissance() + "', "
                     + "`status`=" + (u.isStatus() ? 1 : 0) + ", "
                     + "`roles`='" + u.getRole() + "', "
-                    + "`motPass`='" + u.getMot_pass() + "', "
+                    + "`password`='" + u.getMot_pass() + "', "
                     + "`email`='" + u.getEmail() + "', "
                     + "`token`='" + u.getToken() + "', "
                     + "`score`='" + u.getScore() + "', "
@@ -223,7 +223,7 @@ public class UserService implements InterfaceCRUD<User> {
 
                 p.setPrenom(RS.getString(6));
                 p.setAdress(RS.getString(7));
-                p.setCin(RS.getString(5));
+                p.setCin(RS.getString(8));
                 p.setDate_naissance(RS.getDate(9));
                 p.setDate_creation_c(RS.getDate(10));
                 p.setRole(RS.getString(3));

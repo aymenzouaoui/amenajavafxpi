@@ -56,7 +56,7 @@ import javafx.scene.shape.Circle;
  */
 public class DetResController implements Initializable {
     public static final String ACCOUNT_SID = "AC0643a8413f76b0e5bdd8ea93378281d0";
-    public static final String AUTH_TOKEN = "827b6c00529c5da6b02c642fec32b1b6";
+    public static final String AUTH_TOKEN = "b514415f294c27d2e1b481ee26f28a9e";
     @FXML
     private Label nom;
     @FXML

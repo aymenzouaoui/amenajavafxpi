@@ -107,13 +107,7 @@ public class TEST extends Application {
         if (cactusX < -CACTUS_SIZE) {
             cactusX = CANVAS_WIDTH;
             score++;
-            UserService u = new UserService();
-    User p =u.getUserByEmai("aymenzouaoui97@gmail.com");
-  String ss=p.getScore();
- int j=Integer.parseInt(ss);
- j=j+score;
-  p.setScore(Integer.toString(j));
-  u.modifier(p);
+            
   
         }
 
@@ -127,34 +121,44 @@ if (cactusX < 100 && cactusX + CACTUS_SIZE > 100 &&
     }
 
     private void draw() {
-        // Clear canvas
-        gc.setFill(Color.WHITE);
-        gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-
-        // Draw ground
-        gc.setFill(Color.LIGHTGREEN);
-        gc.fillRect(0, GROUND_Y, CANVAS_WIDTH, CANVAS_HEIGHT - GROUND_Y);
-
-        // Draw dino
-        gc.setFill(Color.RED);
-        gc.fillRect(100, dinoY, DINO_SIZE, DINO_SIZE);
-
-        // Draw cactus
-        gc.setFill(Color.BLACK);
-        gc.fillRect(cactusX, GROUND_Y - CACTUS_SIZE, CACTUS_SIZE, CACTUS_SIZE);
-
-        // Draw score
-        gc.setFont(Font.getDefault());
-        gc.setFill(Color.BLACK);
-        gc.fillText("Score: " + score, 10, 20);
-
-        // Draw game over message
-  if (gameover) {
-        gc.setFill(Color.RED);
-        gc.setFont(new Font("Arial", 30));
-        gc.fillText("GAME OVER", CANVAS_WIDTH / 2 - 100, CANVAS_HEIGHT / 2);
-        timer.stop();
-    }
+        try {
+            // Clear canvas
+            gc.setFill(Color.WHITE);
+            gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            
+            // Draw ground
+            gc.setFill(Color.LIGHTGREEN);
+            gc.fillRect(0, GROUND_Y, CANVAS_WIDTH, CANVAS_HEIGHT - GROUND_Y);
+            
+            // Draw dino
+            gc.setFill(Color.RED);
+            gc.fillRect(100, dinoY, DINO_SIZE, DINO_SIZE);
+            
+            // Draw cactus
+            gc.setFill(Color.BLACK);
+            gc.fillRect(cactusX, GROUND_Y - CACTUS_SIZE, CACTUS_SIZE, CACTUS_SIZE);
+            
+            // Draw score
+            gc.setFont(Font.getDefault());
+            gc.setFill(Color.BLACK);
+            gc.fillText("Score: " + score, 10, 20);
+            UserService u = new UserService();
+            User p =u.getUserByEmai(semail);
+            String ss=p.getScore();
+            int j=Integer.parseInt(ss);
+            j=j+score;
+            p.setScore(Integer.toString(j));
+            u.modifier(p);
+            
+            // Draw game over message
+            if (gameover) {
+                gc.setFill(Color.RED);
+                gc.setFont(new Font("Arial", 30));
+                gc.fillText("GAME OVER", CANVAS_WIDTH / 2 - 100, CANVAS_HEIGHT / 2);
+                timer.stop();
+            }   } catch (SQLException ex) {
+            Logger.getLogger(TEST.class.getName()).log(Level.SEVERE, null, ex);
+        }
 }
 
 public static void main(String[] args) {

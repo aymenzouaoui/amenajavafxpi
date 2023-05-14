@@ -5,10 +5,14 @@
         <group>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ajoutV2/Fajout2Controller.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/AfficherColisController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/TEST.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/DashboardClient/NewFXMain.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/gui/Confirmer.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/gui/AddCompetitionController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/services/CompetitionCRUD.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/services/ColisCRUD.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/gui/AfficherTransporteurAnnonceController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ModifiermotpasseController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/gui/DetailsGiftsController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/gui/OffreController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/CreateAccountController.java</file>
@@ -19,18 +23,16 @@
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/gui/AfficherColisController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/DashbordTController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/AjouteDocumentExpeditionController.java</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/GenererPdf.fxml</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/TransorteurVi.fxml</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ProfilTransporteur.fxml</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ProfilDecController.java</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/dashboard/First3Controller.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/gui/AController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ChatController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ChatUserController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/TransController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/modifierp/ModifierVController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/interfaceVelo/AjoutVeloController.java</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/FirstWindow.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/gui/ModifierController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/LoginAccountController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/model/Vehicule.java</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/DashbordT.fxml</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/gui/GestionGamificationController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/DashbordClientController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/client/DetResController.java</file>
@@ -42,10 +44,11 @@
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/client/VitrineController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/detaille/DisplayController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ProfilTransporteurController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/gui/AcceilleController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/gui/InterfaceGiftsTransporteursController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/gui/AjoutDController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/DigiDreamsAmena/DigiDreamsAmena.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/PrintService.java</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/profilDec.fxml</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/DashboardTransporteur/DashboardController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/services/AnnonceCRUD.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/services/VehiculeCRUD.java</file>
@@ -54,12 +57,13 @@
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ProfilController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/gui/AfficherColis.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/UpdateProfilController.java</file>
-            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/gui/AddCompetition.fxml</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ReservationInterface/DetResController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/gui/AccueilController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/ProfilresController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/gui/AfficherClientAnnonceController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/amena/gui/NewFXMain.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/AjoutController.java</file>
+            <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/gui/ConfirmerController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/digidreamers/amena/gui/InterfaceTransporteurController.java</file>
             <file>file:/C:/Users/aymen/Desktop/AMENA-main/AMENA-main/src/test/workshop/controllers/GenererPdfController.java</file>
         </group>
